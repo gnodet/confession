@@ -19,6 +19,64 @@
         .indent {
             margin-left: 2em;
         }
+        .center {
+            text-align: center;
+            display: block;
+            margin: 20px auto;
+        }
+        .justified {
+            text-align: justify;
+            margin: 20px auto;
+        }
+
+        /* Global Styles */
+        body {
+            line-height: 1.6;
+            background-color: #f7f7f7;
+            color: #333;
+        }
+
+        /* Main Header */
+        h1, h2, h3 {
+            font-weight: bold;
+            color: #9e2a2f; /* Dark Red */
+            text-align: center;
+        }
+
+        /* Links */
+        a {
+            color: #003b5c; /* Deep Blue */
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: #ffd700; /* Gold */
+        }
+
+        /* Buttons */
+        button {
+            padding: 10px 15px;
+            background-color: #9e2a2f; /* Dark Red */
+            color: white;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #ffd700; /* Gold */
+        }
+
+        /* Section Spacing */
+        section {
+            margin-bottom: 20px;
+        }
+
+        /* Form Inputs */
+        input[type="text"], input[type="checkbox"] {
+            padding: 8px;
+            border: 1px solid
+        }
     </style>
 </head>
 <body>
@@ -38,39 +96,39 @@
         « Il a pour références les commandements de Dieu et de l’Église et s’inspire de la tradition spirituelle et morale la plus constante.
     </i></p>
 
-    <p><i><b>Beaucoup de confessions sont stériles</b> parce qu’on y dit des banalités,
+    <p class="justified"><i><b>Beaucoup de confessions sont stériles</b> parce qu’on y dit des banalités,
         des aveux passe-partout, en tout cas, pas ce qu’il faudrait dire.</i></p>
-    <p><i>Cette petite page voudrait <b>vous aider</b> à faire des <b>confessions sincères,
+    <p class="justified"><i>Cette petite page voudrait <b>vous aider</b> à faire des <b>confessions sincères,
         complètes, purifiantes, pacifiantes et sanctifiantes</b>, qui vous donnent la paix
         du cœur ici-bas, et qui vous ouvrent ensuite la porte du Ciel.</i></p>
-    <p><i>Beaucoup de chrétiens ignorent la nomenclature même de tous les péchés, qu’ils
+    <p class="justified"><i>Beaucoup de chrétiens ignorent la nomenclature même de tous les péchés, qu’ils
         sont constamment exposés à faire et, à force de ne plus s’examiner <b>en détail</b>
         à la lumière d’une vraie doctrine morale, ils finissent par ne plus se trouver
         coupables d’aucun péché, si ce n’est de quelques menues peccadilles. Peut-être
         le présent fascicule apportera-t-il un peu de lucidité aux âmes qui désirent la
         lumière&nbsp;!</i></p>
-    <p><i><b>Prenez donc le temps</b> de lire attentivement cette page, soit chez vous,
+    <p class="justified"><i><b>Prenez donc le temps</b> de lire attentivement cette page, soit chez vous,
         soit à l’église&nbsp;: vous pouvez en retirer une grande paix, et elle aura atteint
         son but.</i></p>
-    <p><i><b>Comment utiliser cette page ?</b></i></p>
-    <p><i>Pendant que vous la parcourez pour faire votre examen de conscience, soit chez
+    <p class="justified"><i><b>Comment utiliser cette page ?</b></i></p>
+    <p class="justified"><i>Pendant que vous la parcourez pour faire votre examen de conscience, soit chez
         vous, soit à l’église, cochez d’une petite croix chaque péché dont vous voulez
         vous accuser au confessionnal. Arrivé à la fin, cliquez sur le bouton afin que la page
         s’actualise avec le contenu de votre accusation et le déroulé de la confession.
         Rassurez-vous, ces informations ne sont envoyées nulle part.
     </i></p>
-    <p><i>Ainsi, pour vous confesser, vous n’aurez qu’à lire,
+    <p class="justified"><i>Ainsi, pour vous confesser, vous n’aurez qu’à lire,
         et aucun effort de mémoire ne vous sera nécessaire, aucun risque non plus d’oublier
         un péché. Dans l’accusation de vos péchés, lisez simplement le texte qui est écrit ;
         de cette manière, <b>vous serez précis, concis, et suffisamment bref</b>. Vous
         n’avez pas à faire des commentaires, ni un exposé de spiritualité, vous êtes là
         pour dire — non pas ce qu’il faudrait faire ou ce que vous auriez dû faire — mais
         ce que vous avez fait ou pas fait&nbsp;: c’est au confesseur à vous dire le reste.</i></p>
-    <p><i>Toutefois, vous pouvez et même vous devez si cela vous est nécessaire poser
+    <p class="justified"><i>Toutefois, vous pouvez et même vous devez si cela vous est nécessaire poser
         des questions au confesseur, soit au cours de l’énumération de vos péchés, soit
         quand vous aurez fini de les dire. Le confesseur n’est pas là seulement pour
         vous pardonner, mais aussi <b>pour vous éclairer</b>.</i></p>
-    <p><i>Une très bonne confession, dit saint Jean Chrysostome, équivaut — pour la
+    <p class="justified"><i>Une très bonne confession, dit saint Jean Chrysostome, équivaut — pour la
         purification de l’âme — à un <b>nouveau baptême</b>. Elle peut donc vous obtenir
         non seulement le pardon de vos péchés, mais encore la remise d’une partie des
         peines du purgatoire.</i></p>
@@ -81,7 +139,7 @@
 
 
         <h3>Ier Commandement</h3>
-        <p><i>« Un seul Dieu tu adoreras et aimeras parfaitement. »</i></p>
+        <p class="center"><i>« Un seul Dieu tu adoreras et aimeras parfaitement. »</i></p>
 
         <fieldset>
             <legend>La prière</legend>
@@ -210,7 +268,7 @@
 
 
         <h3>II° Commandement</h3>
-        <p><i>« Son Saint Nom tu respecteras, fuyant blasphème et faux serment. »</i></p>
+        <p class="center"><i>« Son Saint Nom tu respecteras, fuyant blasphème et faux serment. »</i></p>
         <fieldset>
             <label><input type="checkbox" name="peche" value="Dans un excès de colère, j’ai profané le saint nom de Dieu.">Dans un excès de colère, j’ai profané le saint nom de Dieu.</label><br>
             <label><input type="checkbox" name="peche" value="J’ai été injurieux envers la religion, envers les prêtres, les sacrements, la piété des autres.">J’ai été injurieux envers la religion, envers les prêtres, les sacrements, la piété des autres.</label><br>
@@ -224,7 +282,7 @@
         </fieldset>
 
         <h3>IIIº Commandement</h3>
-        <p><i>« Le jour du Seigneur garderas, en servant Dieu dévotement. »</i></p>
+        <p class="center"><i>« Le jour du Seigneur garderas, en servant Dieu dévotement. »</i></p>
 
         <fieldset>
             <legend>La messe du dimanche :</legend>
@@ -253,7 +311,7 @@
 
 
         <h3>IV° Commandement</h3>
-        <p><i>« Tes père et mère honoreras, tes supérieurs pareillement. »</i></p>
+        <p class="center"><i>« Tes père et mère honoreras, tes supérieurs pareillement. »</i></p>
 
         <fieldset>
             <legend>Ma vie familiale</legend>
@@ -312,7 +370,7 @@
     </fieldset>
 
         <h3>V° Commandement</h3>
-        <p><i>« Meurtre et scandale éviteras, haine et colère pareillement. »</i></p>
+        <p class="center"><i>« Meurtre et scandale éviteras, haine et colère pareillement. »</i></p>
 
         <fieldset>
             <label><input type="checkbox" name="peche" value="Je suis méchant.">Je suis méchant.</label><br>
@@ -336,8 +394,8 @@
         </fieldset>
 
         <h3>VI° et IX° commandements</h3>
-        <p><i>« La pureté observeras en tes actes soigneusement. »</i></p>
-        <p><i>« En pensées, désirs veilleras à rester pur entièrement. »</i></p>
+        <p class="center"><i>« La pureté observeras en tes actes soigneusement. »</i></p>
+        <p class="center"><i>« En pensées, désirs veilleras à rester pur entièrement. »</i></p>
 
         <fieldset>
             <legend>Discipline des sens ; modestie</legend>
@@ -370,8 +428,8 @@
         </fieldset>
 
         <h3>VII° et X° commandements</h3>
-        <p><i>« Le bien d’autrui tu ne prendras ni retiendras injustement. »</i></p>
-        <p><i>« Bien d’autrui ne convoiteras pour l’avoir malhonnêtement. »</i></p>
+        <p class="center"><i>« Le bien d’autrui tu ne prendras ni retiendras injustement. »</i></p>
+        <p class="center"><i>« Bien d’autrui ne convoiteras pour l’avoir malhonnêtement. »</i></p>
 
         <fieldset>
             <label><input type="checkbox" name="peche" value="J’ai volé (dites quelle valeur, au moins approximativement, ou précisez l’objet volé).">J’ai volé (dites quelle valeur, au moins approximativement, ou précisez l’objet volé).</label><br>
@@ -405,7 +463,7 @@
         </fieldset>
 
         <h3>VIII° commandement</h3>
-        <p><i>« La médisance banniras et le mensonge également. »</i></p>
+        <p class="center"><i>« La médisance banniras et le mensonge également. »</i></p>
 
         <fieldset>
             <legend>Mensonge</legend>
@@ -503,13 +561,24 @@
         <label><input type="checkbox" name="peche" value="Je cherche mes aises dans mes attitudes au lieu de me discipliner et de me tenir dignement.">Je cherche mes aises dans mes attitudes au lieu de me discipliner et de me tenir dignement.</label><br>
     </fieldset>
 
-        <!-- Répétez les sections pour tous les commandements et péchés -->
+        <h3>Autre péchés</h3>
+        <fieldset>
+            <div id="otherSins">
+                <div>
+                    <input type="checkbox" name="peche" disabled>
+                    <input type="text" placeholder="Entrez votre péché" oninput="addCheckbox(this)">
+                </div>
+            </div>
+        </fieldset>
 
-        <button type="submit">Valider ma confession</button>
+    <p/>
+
+        <button type="submit" class="center">Ma confession...</button>
     </form>
 </div>
 
 <div id="summary" class="hidden">
+    <form onsubmit="toggleBack(event)">
     <h1>Votre confession</h1>
 
     <p>Au nom du Père et du Fils et du Saint-Esprit. Amen.</p>
@@ -523,15 +592,53 @@
     <p>Mon Père, voici mes péchés :</p>
     <ul id="peches-list"></ul>
     <p>De tous ces péchés — de tous ceux que j’ai oubliés — de tous ceux de ma vie passée, je demande pardon à Dieu  — et, à vous, mon Père, pénitence et absolution, si vous m’en jugez digne.</p>
-    <p>Oui, j’ai vraiment péché. C’est pourquoi je supplie la Vierge Marie, les anges et tous les saints et vous aussi, mon Père, de prier pour moi le Seigneur notre Dieu.</p>
+    <p>Oui, j’ai vraiment péché. C’est pourquoi je supplie la bienheureuse Vierge Marie, les anges et tous les saints et vous aussi, mon Père, de prier pour moi le Seigneur notre Dieu.</p>
     <p class="indent"><i>Vous écoutez ensuite ce que vous dit le confesseur&nbsp;; quand il a fini de vous parler, vous dites l’acte de contrition&nbsp;:</i></p>
     <p>Mon Dieu, j’ai un très grand regret de vous avoir offensé, parce que vous êtes infiniment bon, et que le péché vous déplaît. Je prends la ferme résolution, avec le secours de votre sainte grâce, de ne plus vous offenser de faire pénitence.</p>
     <p class="indent"><i>Vous écoutez la formule d’absolution, — avec joie, humilité et reconnaissance.</i></p>
     <p>Merci, mon Père / monsieur l’abbé !</p>
     <p class="indent"><i>Vous allez faire la pénitence que le confesseur vous a imposée.</i></p>
+
+    <button type="submit" class="center">Revenir à mon examen de conscience...</button>
+    <button onclick="clean()" class="center">Deo Gratias&nbsp;!</button>
 </div>
 
 <script>
+    function clean() {
+        let checkboxes = document.querySelectorAll('input[type="checkbox"]');
+        checkboxes.forEach(function(checkbox) {
+            checkbox.checked = false;
+        });
+        let textInputs = document.querySelectorAll('input[type="text"]');
+        textInputs.forEach(function(input) {
+            input.value = '';
+        });
+        toggleBack(null);
+    }
+
+    function addCheckbox(input) {
+        if (input.value.trim() !== "") {
+            input.previousElementSibling.disabled = false
+            input.previousElementSibling.checked = true;
+            input.previousElementSibling.value = input.value;
+            let allInputs = document.querySelectorAll('#otherSins input[type="text"]');
+            if (input === allInputs[allInputs.length - 1]) {
+                let newDiv = document.createElement('div');
+                newDiv.innerHTML = `<input type="checkbox" name="peche" disabled> <input type="text" placeholder="Entrez votre péché" oninput="addCheckbox(this)">`;
+                document.getElementById('otherSins').appendChild(newDiv);
+            }
+        } else {
+            input.previousElementSibling.disabled = true
+            input.previousElementSibling.checked = false;
+        }
+    }
+
+    function toggleBack(event) {
+        event.preventDefault();
+        document.getElementById('confession-form').classList.remove('hidden');
+        document.getElementById('summary').classList.add('hidden');
+    }
+
     function generateSummary(event) {
         event.preventDefault();
 
