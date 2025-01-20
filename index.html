@@ -637,6 +637,7 @@
         event.preventDefault();
         document.getElementById('confession-form').classList.remove('hidden');
         document.getElementById('summary').classList.add('hidden');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
     function generateSummary(event) {
@@ -658,6 +659,7 @@
 
         document.getElementById('confession-form').classList.add('hidden');
         document.getElementById('summary').classList.remove('hidden');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 </script>
 
