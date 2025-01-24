@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Examen de conscience pour les enfants (7-11 ans)</title>
+    <style>
+        /* Styles identiques */
+        :root {
+            --text-color: #444;
+            --bg-color: #ffffff;
+            --primary-color: #4a90e2;
+            --secondary-color: #82c91e;
+            --border-color: #ddd;
+            --spacing-unit: 1rem;
+        }
+
+        body {
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            line-height: 1.6;
+            background: #f9f9f9;
+            color: var(--text-color);
+            max-width: 800px;
+            margin: 0 auto;
+            padding: var(--spacing-unit);
+        }
+
+        h1, h2, h3 {
+            color: var(--primary-color);
+            text-align: center;
+        }
+
+        fieldset {
+            margin: 1rem 0;
+            padding: 1rem;
+            border: 2px solid var(--border-color);
+            border-radius: 15px;
+            background: white;
+        }
+
+        legend {
+            background: var(--primary-color);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 10px;
+            font-weight: bold;
+        }
+
+        label {
+            display: flex;
+            align-items: center;
+            margin: 0.5rem 0;
+            font-size: 1.1rem;
+        }
+
+        input[type="checkbox"] {
+            margin-right: 1rem;
+            width: 20px;
+            height: 20px;
+        }
+
+        .indent {
+            margin-left: 2rem;
+            padding-left: 1rem;
+            border-left: 3px solid var(--secondary-color);
+            font-style: italic;
+        }
+
+        button {
+            display: block;
+            width: 100%;
+            max-width: 300px;
+            margin: 1.5rem auto;
+            padding: 1rem;
+            background: var(--secondary-color);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            font-family: inherit;
+        }
+
+        button:hover {
+            background: var(--primary-color);
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        #summary {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .bible-quote {
+            font-style: italic;
+            color: var(--primary-color);
+            text-align: center;
+            margin: 1rem 0;
+        }
+    </style>
+</head>
+<body>
+<div id="confession-form">
+    <h1>EXAMEN DE CONSCIENCE<br>Pour les 7-11 ans</h1>
+
+    <p class="indent">L'âge de raison me permet de distinguer mes bonnes actions de mes mauvaises. Lorsque je n'agis pas bien, je m'éloigne de Dieu, la confession me permet de retrouver l'amitié de Dieu.</p>
+
+    <form id="confession" onsubmit="generateSummary(event)">
+        <h2>Ma vie spirituelle</h2>
+        <p class="bible-quote">« Je reviendrai chez vous une autre fois, s'il plait à Dieu. » (Acte des apôtres 18,21)</p>
+
+        <fieldset>
+            <label><input type="checkbox" name="peche" value="J'oublie de laisser à Dieu une place dans ma vie">J'oublie de laisser à Dieu une place dans ma vie</label>
+            <label><input type="checkbox" name="peche" value="Je doute de l'Amour de Dieu">Je doute de l'Amour de Dieu</label>
+            <label><input type="checkbox" name="peche" value="Je doute de son existence">Je doute de son existence</label>
+            <label><input type="checkbox" name="peche" value="J'oublie de lui rendre grâce certains jours">J'oublie de lui rendre grâce certains jours</label>
+            <label><input type="checkbox" name="peche" value="Je ne cherche pas à mieux le connaître">Je ne cherche pas à mieux le connaître</label>
+            <label><input type="checkbox" name="peche" value="J'ai perturbé la prière familiale">J'ai perturbé la prière familiale</label>
+            <label><input type="checkbox" name="peche" value="J'ai râlé pour aller à la messe">J'ai râlé pour aller à la messe</label>
+            <label><input type="checkbox" name="peche" value="J'ai été distrait à la messe">J'ai été distrait à la messe</label>
+            <label><input type="checkbox" name="peche" value="J'ai empêché le recueillement des autres">J'ai empêché le recueillement des autres</label>
+            <label><input type="checkbox" name="peche" value="Je reçois Jésus dans mon cœur de façon machinale ou irrespectueuse">Je reçois Jésus dans mon cœur de façon machinale ou irrespectueuse</label>
+            <label><input type="checkbox" name="peche" value="J'ai rechigné à participer à la prière familiale">J'ai rechigné à participer à la prière familiale</label>
+        </fieldset>
+
+        <h2>Ma vie intérieure</h2>
+        <p class="bible-quote">« Car il est à ma droite, pour que je ne vacille pas. » (Acte des apôtres 2, 25)</p>
+
+        <fieldset>
+            <label><input type="checkbox" name="peche" value="Je suis paresseux pour faire mon lit">Je suis paresseux pour faire mon lit</label>
+            <label><input type="checkbox" name="peche" value="Je suis paresseux pour faire mes devoirs">Je suis paresseux pour faire mes devoirs</label>
+            <label><input type="checkbox" name="peche" value="Je suis paresseux pour jouer de mon instrument">Je suis paresseux pour jouer de mon instrument</label>
+            <label><input type="checkbox" name="peche" value="Je suis paresseux pour me lever">Je suis paresseux pour me lever</label>
+            <label><input type="checkbox" name="peche" value="Je suis paresseux pour ranger ma chambre">Je suis paresseux pour ranger ma chambre</label>
+            <label><input type="checkbox" name="peche" value="Je perds mon temps devant la télévision, une tablette ou une console">Je perds mon temps devant la télévision, une tablette ou une console</label>
+            <label><input type="checkbox" name="peche" value="J'ai été orgueilleux, j'ai voulu me faire admirer, remarquer">J'ai été orgueilleux, j'ai voulu me faire admirer, remarquer</label>
+            <label><input type="checkbox" name="peche" value="J'ai été impatient, coléreux">J'ai été impatient, coléreux</label>
+            <label><input type="checkbox" name="peche" value="J'ai trahi un secret, je n'ai pas tenu mes promesses">J'ai trahi un secret, je n'ai pas tenu mes promesses</label>
+            <label><input type="checkbox" name="peche" value="J'ai dit des gros mots">J'ai dit des gros mots</label>
+            <label><input type="checkbox" name="peche" value="J'ai trop mangé par gourmandise ou gloutonnerie">J'ai trop mangé par gourmandise ou gloutonnerie</label>
+        </fieldset>
+
+        <h2>Ma vie familiale</h2>
+        <p class="bible-quote">« En toute nation, celui qui craint Dieu et pratique la justice lui est agréable. » (Acte des Apôtres 10, 35)</p>
+
+        <fieldset>
+            <label><input type="checkbox" name="peche" value="J'ai manqué de respect envers mes parents">J'ai manqué de respect envers mes parents</label>
+            <label><input type="checkbox" name="peche" value="J'ai manqué de politesse">J'ai manqué de politesse</label>
+            <label><input type="checkbox" name="peche" value="Je ne montre que du ressentiment">Je ne montre que du ressentiment</label>
+            <label><input type="checkbox" name="peche" value="J'ai été dur ou insolent avec maman, avec papa">J'ai été dur ou insolent avec maman, avec papa</label>
+            <label><input type="checkbox" name="peche" value="J'ai été indiscret en cherchant à savoir ce qui ne me regarde pas">J'ai été indiscret en cherchant à savoir ce qui ne me regarde pas</label>
+            <label><input type="checkbox" name="peche" value="J'ai refusé de rendre service">J'ai refusé de rendre service</label>
+            <label><input type="checkbox" name="peche" value="J'ai refusé d'obéir rapidement et gentiment">J'ai refusé d'obéir rapidement et gentiment</label>
+            <label><input type="checkbox" name="peche" value="Je suis insolent ou dur">Je suis insolent ou dur</label>
+            <label><input type="checkbox" name="peche" value="J'ai crié">J'ai crié</label>
+            <label><input type="checkbox" name="peche" value="J'ai menti">J'ai menti</label>
+            <label><input type="checkbox" name="peche" value="J'ai rapporté, j'ai dit du mal des autres">J'ai rapporté, j'ai dit du mal des autres</label>
+            <label><input type="checkbox" name="peche" value="J'ai dérangé l'ordre à la maison">J'ai dérangé l'ordre à la maison</label>
+            <label><input type="checkbox" name="peche" value="Je suis ingrat envers mon papa qui travaille pour nous">Je suis ingrat envers mon papa qui travaille pour nous</label>
+            <label><input type="checkbox" name="peche" value="J'ai abîmé mes affaires">J'ai abîmé mes affaires</label>
+            <label><input type="checkbox" name="peche" value="J'ai refusé de manger ce que je n'aimais pas">J'ai refusé de manger ce que je n'aimais pas</label>
+            <label><input type="checkbox" name="peche" value="J'ai mangé quelque chose sans permission">J'ai mangé quelque chose sans permission</label>
+            <label><input type="checkbox" name="peche" value="J'ai fait des caprices">J'ai fait des caprices</label>
+            <label><input type="checkbox" name="peche" value="J'ai cassé quelque chose exprès">J'ai cassé quelque chose exprès</label>
+            <label><input type="checkbox" name="peche" value="J'ai refusé de faire mon lit">J'ai refusé de faire mon lit</label>
+            <label><input type="checkbox" name="peche" value="J'ai refusé d'aller me coucher à l'heure">J'ai refusé d'aller me coucher à l'heure</label>
+            <label><input type="checkbox" name="peche" value="J'ai fait des histoires pour me laver">J'ai fait des histoires pour me laver</label>
+            <label><input type="checkbox" name="peche" value="Je me suis détaché en voiture">Je me suis détaché en voiture</label>
+            <label><input type="checkbox" name="peche" value="J'ai été méchant avec un frère ou une sœur">J'ai été méchant avec un frère ou une sœur</label>
+            <label><input type="checkbox" name="peche" value="J'ai été égoïste">J'ai été égoïste</label>
+            <label><input type="checkbox" name="peche" value="J'ai tiré les cheveux d'un frère ou d'une sœur">J'ai tiré les cheveux d'un frère ou d'une sœur</label>
+            <label><input type="checkbox" name="peche" value="J'ai manqué d'attention à l'égard des plus jeunes">J'ai manqué d'attention à l'égard des plus jeunes</label>
+            <label><input type="checkbox" name="peche" value="J'ai refusé de prêter mes affaires">J'ai refusé de prêter mes affaires</label>
+            <label><input type="checkbox" name="peche" value="J'ai été mauvais joueur">J'ai été mauvais joueur</label>
+            <label><input type="checkbox" name="peche" value="J'ai triché en jouant">J'ai triché en jouant</label>
+            <label><input type="checkbox" name="peche" value="J'ai manqué de fairplay en gagnant">J'ai manqué de fairplay en gagnant</label>
+            <label><input type="checkbox" name="peche" value="J'ai voulu me venger">J'ai voulu me venger</label>
+            <label><input type="checkbox" name="peche" value="J'ai refusé de pardonner">J'ai refusé de pardonner</label>
+            <label><input type="checkbox" name="peche" value="J'ai refusé de demander pardon">J'ai refusé de demander pardon</label>
+            <label><input type="checkbox" name="peche" value="J'ai laissé punir quelqu'un à ma place">J'ai laissé punir quelqu'un à ma place</label>
+            <label><input type="checkbox" name="peche" value="Je me suis moqué des autres">Je me suis moqué des autres</label>
+            <label><input type="checkbox" name="peche" value="J'ai empêché les autres de travailler">J'ai empêché les autres de travailler</label>
+            <label><input type="checkbox" name="peche" value="J'ai volé ou gardé les affaires des autres">J'ai volé ou gardé les affaires des autres</label>
+            <label><input type="checkbox" name="peche" value="J'ai abîmé volontairement les affaires des autres</label>
+                <label><input type="checkbox" name="peche" value="Je me suis mal tenu à table">Je me suis mal tenu à table</label>
+            <label><input type="checkbox" name="peche" value="J'ai été jaloux des autres">J'ai été jaloux des autres</label>
+            <label><input type="checkbox" name="peche" value="J'ai dit du mal de quelqu'un">J'ai dit du mal de quelqu'un</label>
+            <label><input type="checkbox" name="peche" value="Je me suis moqué d'un plus faible">Je me suis moqué d'un plus faible</label>
+            <label><input type="checkbox" name="peche" value="J'ai rapporté">J'ai rapporté</label>
+            <label><input type="checkbox" name="peche" value="J'ai dit des choses méchantes">J'ai dit des choses méchantes</label>
+            <label><input type="checkbox" name="peche" value="J'ai fait mal à mes frères et sœurs">J'ai fait mal à mes frères et sœurs</label>
+            <label><input type="checkbox" name="peche" value="J'ai répété pour énerver">J'ai répété pour énerver</label>
+            <label><input type="checkbox" name="peche" value="Je n'ai pas rangé mes jeux">Je n'ai pas rangé mes jeux</label>
+            <label><input type="checkbox" name="peche" value="J'ai fait pleurer les plus petits exprès">J'ai fait pleurer les plus petits exprès</label>
+            <label><input type="checkbox" name="peche" value="J'ai refusé de partager">J'ai refusé de partager</label>
+            <label><input type="checkbox" name="peche" value="J'ai laissé punir quelqu'un à ma place">J'ai laissé punir quelqu'un à ma place</label>
+            <label><input type="checkbox" name="peche" value="J'ai montré le mauvais exemple aux plus petits">J'ai montré le mauvais exemple aux plus petits</label>
+            <label><input type="checkbox" name="peche" value="J'ai pensé du mal d'un frère ou d'une sœur">J'ai pensé du mal d'un frère ou d'une sœur</label>
+        </fieldset>
+
+        <h2>Ma vie scolaire</h2>
+        <p class="bible-quote">« Vous serez mes témoins jusqu'aux extrémités de la terre. » (Acte des apôtres 1,8)</p>
+
+        <fieldset>
+            <label><input type="checkbox" name="peche" value="J'ai empêché les autres élèves de travailler">J'ai empêché les autres élèves de travailler</label>
+            <label><input type="checkbox" name="peche" value="Je n'ai pas été reconnaissant de pouvoir m'instruire">Je n'ai pas été reconnaissant de pouvoir m'instruire</label>
+            <label><input type="checkbox" name="peche" value="Je me contente de me donner à moitié">Je me contente de me donner à moitié</label>
+            <label><input type="checkbox" name="peche" value="J'ai copié sur mon voisin">J'ai copié sur mon voisin</label>
+            <label><input type="checkbox" name="peche" value="Je suis distrait en classe et bâcle mes devoirs">Je suis distrait en classe et bâcle mes devoirs</label>
+            <label><input type="checkbox" name="peche" value="J'ai été insolent en classe">J'ai été insolent en classe</label>
+            <label><input type="checkbox" name="peche" value="J'ai été méchant avec mes camarades">J'ai été méchant avec mes camarades</label>
+            <label><input type="checkbox" name="peche" value="J'ai refusé de jouer avec ceux que j'aimais moins">J'ai refusé de jouer avec ceux que j'aimais moins</label>
+            <label><input type="checkbox" name="peche" value="J'ai laissé punir quelqu'un à ma place">J'ai laissé punir quelqu'un à ma place</label>
+            <label><input type="checkbox" name="peche" value="J'ai manqué de respect au travail de la maîtresse">J'ai manqué de respect au travail de la maîtresse</label>
+            <label><input type="checkbox" name="peche" value="Je me moque des autres">Je me moque des autres</label>
+            <label><input type="checkbox" name="peche" value="J'ai volé ou gardé quelque chose qui ne m'appartenait pas">J'ai volé ou gardé quelque chose qui ne m'appartenait pas</label>
+        </fieldset>
+
+        <button type="submit" class="center">Préparer ma confession...</button>
+    </form>
+</div>
+
+<div id="summary" class="hidden">
+    <h1>Ma confession</h1>
+
+    <p class="indent">Faites le signe de croix pendant que le prêtre vous bénit et dites&nbsp;:</p>
+
+    <p>Au nom du Père et du Fils et du Saint-Esprit. Amen.</p>
+
+    <p>Mon Père, bénissez-moi parce que j'ai péché.</p>
+
+    <p>Je ne me suis pas confessé depuis...</p>
+
+    <p>Voici mes péchés :</p>
+    <ul id="peches-list"></ul>
+
+    <p>Je regrette tous ces péchés et aussi ceux que j'ai pu oublier.</p>
+
+    <p class="indent">Maintenant, écoute ce que te dit le prêtre et dis ensuite :</p>
+
+    <p>"Mon Dieu, j'ai un très grand regret de vous avoir offensé parce que vous êtes infiniment bon. Je prends la résolution, avec le secours de votre sainte grâce, de ne plus recommencer."</p>
+
+    <button onclick="toggleBack(event)">Revenir à l'examen de conscience</button>
+    <button onclick="clean()">J'ai fini !</button>
+</div>
+
+<script>
+    function clean() {
+        let checkboxes = document.querySelectorAll('input[type="checkbox"]');
+        checkboxes.forEach(function(checkbox) {
+            checkbox.checked = false;
+        });
+        toggleBack(null);
+    }
+
+    function toggleBack(event) {
+        if (event) event.preventDefault();
+        document.getElementById('confession-form').classList.remove('hidden');
+        document.getElementById('summary').classList.add('hidden');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function generateSummary(event) {
+        event.preventDefault();
+
+        const selectedPeches = Array.from(document.querySelectorAll('input[name="peche"]:checked'));
+        const pechesList = document.getElementById('peches-list');
+        pechesList.innerHTML = '';
+
+        if (selectedPeches.length === 0) {
+            pechesList.innerHTML = '<li>Je n\'ai rien coché.</li>';
+        } else {
+            selectedPeches.forEach(peche => {
+                const li = document.createElement('li');
+                li.textContent = peche.value;
+                pechesList.appendChild(li);
+            });
+        }
+
+        document.getElementById('confession-form').classList.add('hidden');
+        document.getElementById('summary').classList.remove('hidden');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+</script>
+</body>
+</html>
