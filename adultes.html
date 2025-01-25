@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aide à la confession — Examen de conscience</title>
+    <style>
+        :root {
+            --text-color: #333;
+            --bg-color: #ffffff;
+            --red-color: #9e2a2f;
+            --deep-blue: #003b5c;
+            --gold-color: #ffd700;
+            --border-color: #ccc;
+            --spacing-unit: 1rem;
+            --section-spacing: 4rem;
+        }
+
+        fieldset {
+            margin: calc(var(--spacing-unit) ) 0 var(--section-spacing);
+            padding: calc(var(--spacing-unit) );
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            background: var(--bg-color);
+        }
+
+        legend {
+            background: var(--bg-color);
+            padding: calc(var(--spacing-unit) / 2) var(--spacing-unit);
+            border-radius: 4px;
+            border: 1px solid var(--border-color);
+            font-weight: bold;
+            font-size: 1.1rem;
+            width: 95%;
+            position: sticky;
+            top: 0;
+            z-index: 1;
+        }
+
+        label {
+            display: flex;
+            margin: calc(var(--spacing-unit) * 0.25) 0;
+            align-items: center;
+            border-radius: 4px;
+            line-height: 1.4;
+        }
+
+        @media (max-width: 768px) {
+            :root {
+                --spacing-unit: 0.875rem;
+                --section-spacing: 3rem;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            h3 {
+                font-size: 1.25rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            :root {
+                --spacing-unit: 0.75rem;
+                --section-spacing: 2.5rem;
+            }
+
+            legend {
+                width: 92%;
+            }
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .indent {
+            margin: var(--spacing-unit) 0 var(--spacing-unit) calc(var(--spacing-unit) * 2);
+            padding-left: var(--spacing-unit);
+            border-left: 2px solid var(--border-color);
+            font-style: italic;
+            color: var(--text-color);
+        }
+
+        #summary {
+            padding: calc(var(--spacing-unit) * 2);
+            background: var(--bg-color);
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        #peches-list {
+            margin: var(--spacing-unit) 0;
+            padding-left: calc(var(--spacing-unit) * 2);
+        }
+
+        #peches-list li {
+            margin: calc(var(--spacing-unit) / 2) 0;
+            line-height: 1.5;
+        }
+
+        .center {
+            text-align: center;
+            display: block;
+            margin: 20px auto;
+        }
+
+        .justified {
+            text-align: justify;
+            margin: 20px auto;
+        }
+
+        /* Global Styles */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background: #f7f7f7;
+            color: var(--text-color);
+            max-width: 800px;
+            margin: 0 auto;
+            padding: var(--spacing-unit);
+        }
+
+        /* Main Header */
+        h1 {
+            font-size: 2.5rem;
+            margin: calc(var(--spacing-unit) * 2) 0;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: var(--spacing-unit);
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin: var(--section-spacing) 0 calc(var(--spacing-unit) * 2);
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            margin: calc(var(--section-spacing) * 0.75) 0 var(--spacing-unit);
+        }
+
+        h1, h2, h3 {
+            font-weight: bold;
+            color: var(--red-color);
+            text-align: center;
+        }
+
+        /* Links */
+        a {
+            color: var(--deep-blue);
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: var(--gold-color);
+        }
+
+        /* Buttons */
+        button {
+            display: block;
+            width: 100%;
+            max-width: 300px;
+            margin: calc(var(--section-spacing) / 2) auto;
+            padding: calc(var(--spacing-unit) * 1.25);
+            background: var(--red-color);
+            color: white;
+            border-radius: 4px;
+            border: none;
+            cursor: pointer;
+            font-size: 1.1rem;
+            transition: background-color 0.2s;
+        }
+
+        button:hover {
+            background: var(--deep-blue);
+        }
+
+        /* Section Spacing */
+        section {
+            margin-bottom: 20px;
+        }
+
+        /* Form Inputs */
+        input[type="text"], input[type="checkbox"] {
+            margin-right: var(--spacing-unit);
+            min-width: 20px;
+            min-height: 20px;
+            flex-shrink: 0;
+        }
+        input[type="text"] {
+            width: 90%;
+        }
+    </style>
+</head>
+<body>
+
+<div id="confession-form">
+    <h1>AIDE À LA CONFESSION</h1>
+    <p class="indent"><i>
+        «&nbsp;Je suis le Seigneur ton Dieu qui t’a libéré d’Égypte. Tu aimeras le Seigneur ton Dieu de tout ton cœur, de toute ton âme, de toute ta force et de tout ton esprit. (Dt 5-6) ... Et tu aimeras ton prochain comme toi-même.&nbsp;» (Lv 19)
+    </i></p>
+
+    <p>J’examine ma conscience.</p>
+    <p>J’ai confiance en Dieu qui est toute miséricorde.</p>
+    <p>Je demande l’aide de la Sainte Vierge, notre Mère, du Saint ont je porte le nom et de tous les Saints, de mon Ange gardien et de tous les Anges.</p>
+
+    <h2>Présentation</h2>
+    <p class="indent"><i>
+        « Il a pour références les commandements de Dieu et de l’Église et s’inspire de la tradition spirituelle et morale la plus constante.
+    </i></p>
+
+    <p class="justified"><i><b>Beaucoup de confessions sont stériles</b> parce qu’on y dit des banalités,
+        des aveux passe-partout, en tout cas, pas ce qu’il faudrait dire.</i></p>
+    <p class="justified"><i>Cette petite page voudrait <b>vous aider</b> à faire des <b>confessions sincères,
+        complètes, purifiantes, pacifiantes et sanctifiantes</b>, qui vous donnent la paix
+        du cœur ici-bas, et qui vous ouvrent ensuite la porte du Ciel.</i></p>
+    <p class="justified"><i>Beaucoup de chrétiens ignorent la nomenclature même de tous les péchés, qu’ils
+        sont constamment exposés à faire et, à force de ne plus s’examiner <b>en détail</b>
+        à la lumière d’une vraie doctrine morale, ils finissent par ne plus se trouver
+        coupables d’aucun péché, si ce n’est de quelques menues peccadilles. Peut-être
+        le présent fascicule apportera-t-il un peu de lucidité aux âmes qui désirent la
+        lumière&nbsp;!</i></p>
+    <p class="justified"><i><b>Prenez donc le temps</b> de lire attentivement cette page, soit chez vous,
+        soit à l’église&nbsp;: vous pouvez en retirer une grande paix, et elle aura atteint
+        son but.</i></p>
+    <p class="justified"><i><b>Comment utiliser cette page&nbsp;?</b></i></p>
+    <p class="justified"><i>Pendant que vous la parcourez pour faire votre examen de conscience, soit chez
+        vous, soit à l’église, cochez d’une petite croix chaque péché dont vous voulez
+        vous accuser au confessionnal. Arrivé à la fin, cliquez sur le bouton afin que la page
+        s’actualise avec le contenu de votre accusation et le déroulé de la confession.
+        Rassurez-vous, ces informations ne sont envoyées nulle part.
+    </i></p>
+    <p class="justified"><i>Ainsi, pour vous confesser, vous n’aurez qu’à lire,
+        et aucun effort de mémoire ne vous sera nécessaire, aucun risque non plus d’oublier
+        un péché. Dans l’accusation de vos péchés, lisez simplement le texte qui est écrit&nbsp;;
+        de cette manière, <b>vous serez précis, concis, et suffisamment bref</b>. Vous
+        n’avez pas à faire des commentaires, ni un exposé de spiritualité, vous êtes là
+        pour dire — non pas ce qu’il faudrait faire ou ce que vous auriez dû faire — mais
+        ce que vous avez fait ou pas fait&nbsp;: c’est au confesseur à vous dire le reste.</i></p>
+    <p class="justified"><i>Toutefois, vous pouvez et même vous devez si cela vous est nécessaire poser
+        des questions au confesseur, soit au cours de l’énumération de vos péchés, soit
+        quand vous aurez fini de les dire. Le confesseur n’est pas là seulement pour
+        vous pardonner, mais aussi <b>pour vous éclairer</b>.</i></p>
+    <p class="justified"><i>Une très bonne confession, dit saint Jean Chrysostome, équivaut — pour la
+        purification de l’âme — à un <b>nouveau baptême</b>. Elle vous donne non seulement le pardon
+        de vos péchés, mais encore la remise d’une partie des peines du purgatoire.</i></p>
+
+    <h2>Examen de Conscience</h2>
+
+    <form id="confession" onsubmit="generateSummary(event)">
+
+
+        <h3>Ier Commandement</h3>
+        <p class="center"><i>«&nbsp;Un seul Dieu tu adoreras et aimeras parfaitement.&nbsp;»</i></p>
+
+        <fieldset>
+            <legend>La prière</legend>
+            <label><input type="checkbox" name="peche" value="Je ne prie jamais ou pas beaucoup.">Je ne prie jamais ou pas beaucoup.</label><br>
+            <label><input type="checkbox" name="peche" value="Je ne fais pas régulièrement mes prières du matin et du soir.">Je ne fais pas régulièrement mes prières du matin et du soir.</label><br>
+            <label><input type="checkbox" name="peche" value="Je dis seulement une petite formule de prière très courte.">Je dis seulement une petite formule de prière très courte.</label><br>
+            <label><input type="checkbox" name="peche" value="Je ne prie qu’en me déshabillant ou en faisant autre chose, sans respect, sans attention, la radio allumée.">Je ne prie qu’en me déshabillant ou en faisant autre chose, sans respect, sans attention, la radio allumée.</label><br>
+            <label><input type="checkbox" name="peche" value="Je ne sais plus les prières du catéchisme et je ne fais rien pour les réapprendre.">Je ne sais plus les prières du catéchisme et je ne fais rien pour les réapprendre.</label><br>
+            <label><input type="checkbox" name="peche" value="Je ne prie jamais à genoux.">Je ne prie jamais à genoux.</label><br>
+            <label><input type="checkbox" name="peche" value="Je fais mal les génuflexions.">Je fais mal les génuflexions.</label><br>
+            <label><input type="checkbox" name="peche" value="Je fais les signes de croix sans piété.">Je fais les signes de croix sans piété.</label><br>
+            <label><input type="checkbox" name="peche" value="Je ne fais pas d’actes d’adoration à Dieu.">Je ne fais pas d’actes d’adoration à Dieu.</label><br>
+            <label><input type="checkbox" name="peche" value="Je ne remercie pas Dieu pour tout ce qu’il me fait.">Je ne remercie pas Dieu pour tout ce qu’il me fait.</label><br>
+            <label><input type="checkbox" name="peche" value="Je ne prie pas devant les tentations (quand j’ai envie de faire quelque chose de mal).">Je ne prie pas devant les tentations (quand j’ai envie de faire quelque chose de mal).</label><br>
+            <label><input type="checkbox" name="peche" value="Je ne fais rien pour mettre la prière en famille.">Je ne fais rien pour mettre la prière en famille.</label><br>
+            <label><input type="checkbox" name="peche" value="Je ne dis jamais l’Angélus.">Je ne dis jamais l’Angélus.</label><br>
+            <label><input type="checkbox" name="peche" value="Je ne dis jamais de chapelet ou je le dis uniquement au lit.">Je ne dis jamais de chapelet ou je le dis uniquement au lit.</label><br>
+        </fieldset>
+
+        <fieldset>
+            <legend>Ma formation religieuse</legend>
+            <label><input type="checkbox" name="peche" value="Je ne cherche pas à m’instruire sur ma foi.">Je ne cherche pas à m’instruire sur ma foi.</label><br>
+            <label><input type="checkbox" name="peche" value="Je ne fais pas de lectures religieuses.">Je ne fais pas de lectures religieuses.</label><br>
+            <label><input type="checkbox" name="peche" value="Je n’écoute pas attentivement les sermons et je n’y réfléchis pas pendant la semaine.">Je n’écoute pas attentivement les sermons et je n’y réfléchis pas pendant la semaine.</label><br>
+            <label><input type="checkbox" name="peche" value="Je trouve les prédications trop longues au lieu de penser à leur contenu.">Je trouve les prédications trop longues au lieu de penser à leur contenu.</label><br>
+            <label><input type="checkbox" name="peche" value="Je critique et conteste ce qu’on m’enseigne.">Je critique et conteste ce qu’on m’enseigne.</label><br>
+        </fieldset>
+
+        <fieldset>
+            <legend>La vertu de foi</legend>
+            <label><input type="checkbox" name="peche" value="Ma foi n’est pas très convaincue et je ne cherche pas à la fortifier.">Ma foi n’est pas très convaincue et je ne cherche pas à la fortifier.</label><br>
+            <label><input type="checkbox" name="peche" value="Je crois facilement que toutes les religions sont égales.">Je crois facilement que toutes les religions sont égales.</label><br>
+            <label><input type="checkbox" name="peche" value="J’ai douté volontairement d’une vérité religieuse (précisez laquelle).">J’ai douté volontairement d’une vérité religieuse (précisez laquelle).</label><br>
+            <label><input type="checkbox" name="peche" value="J’ai participé à des conversations où la religion était critiquée.">J’ai participé à des conversations où la religion était critiquée.</label><br>
+            <label><input type="checkbox" name="peche" value="J’ai mis en danger ma foi en fréquentant sans nécessité des personnes sans religion ou hostiles à la foi catholique.">J’ai mis en danger ma foi en fréquentant sans nécessité des personnes sans religion ou hostiles à la foi catholique.</label><br>
+            <label><input type="checkbox" name="peche" value="Je n’ose pas défendre ma foi lorsqu’elle est attaquée devant moi.">Je n’ose pas défendre ma foi lorsqu’elle est attaquée devant moi.</label><br>
+            <label><input type="checkbox" name="peche" value="J’ai participé à des actes de superstition : j’ai consulté des sorciers, des guérisseurs, des tireuses de cartes ou des diseuses de bonne aventure.">J’ai participé à des actes de superstition : j’ai consulté des sorciers, des guérisseurs, des tireuses de cartes ou des diseuses de bonne aventure.</label><br>
+            <label><input type="checkbox" name="peche" value="J’ai assisté à des séances de tables tournantes de spiritisme ou d’hypnotisme.">J’ai assisté à des séances de tables tournantes de spiritisme ou d’hypnotisme.</label><br>
+            <label><input type="checkbox" name="peche" value="J’ai porté sur moi ou sur ma voiture des objets porte-bonheur.">J’ai porté sur moi ou sur ma voiture des objets porte-bonheur.</label><br>
+            <label><input type="checkbox" name="peche" value="Je «&nbsp;touche du bois&nbsp;» pour être préservé d’un malheur.">Je «&nbsp;touche du bois&nbsp;» pour être préservé d’un malheur.</label><br>
+            <label><input type="checkbox" name="peche" value="J’ai honte de montrer ma foi, de faire en public des gestes de piété, des signes de croix, des génuflexions (= péché de respect humain), — de porter ostensiblement des objets pieux (médailles, croix, chapelet) — de prier à haute voix en public.">J’ai honte de montrer ma foi, de faire en public des gestes de piété, des signes de croix, des génuflexions (= péché de respect humain), — de porter ostensiblement des objets pieux (médailles, croix, chapelet) — de prier à haute voix en public.</label><br>
+            <label><input type="checkbox" name="peche" value="Je suis inscrit à une secte anticatholique. J’ai reçu chez moi des adeptes d’une secte, et j’ai discuté inutilement avec eux, mettant ainsi ma foi en danger.">Je suis inscrit à une secte anticatholique. J’ai reçu chez moi des adeptes d’une secte, et j’ai discuté inutilement avec eux, mettant ainsi ma foi en danger.</label><br>
+        </fieldset>
+
+        <fieldset>
+            <legend>La vertu d’espérance</legend>
+            <label><input type="checkbox" name="peche" value="Je ne suis pas assez préoccupé par mon salut éternel.">Je ne suis pas assez préoccupé par mon salut éternel.</label><br>
+            <label><input type="checkbox" name="peche" value="Je suis trop attaché aux biens terrestres et je pense peu au ciel.">Je suis trop attaché aux biens terrestres et je pense peu au ciel.</label><br>
+            <label><input type="checkbox" name="peche" value="Je ne crois pas à la résurrection de mon corps.">Je ne crois pas à la résurrection de mon corps.</label><br>
+            <label><input type="checkbox" name="peche" value="Je ne redoute pas l’enfer — je pense qu’il n’est pas possible pour moi.">Je ne redoute pas l’enfer — je pense qu’il n’est pas possible pour moi.</label><br>
+            <label><input type="checkbox" name="peche" value="J’abuse de la patience et de la bonté de Dieu pour pécher et rester dans le péché, sans crainte de me damner (péché de présomption).">J’abuse de la patience et de la bonté de Dieu pour pécher et rester dans le péché, sans crainte de me damner (péché de présomption).</label><br>
+            <label><input type="checkbox" name="peche" value="Je n’ai pas le souci d’abréger mon purgatoire.">Je n’ai pas le souci d’abréger mon purgatoire.</label><br>
+            <label><input type="checkbox" name="peche" value="J’ai manqué de manque de confiance en Dieu dans les difficultés.">J’ai manqué de manque de confiance en Dieu dans les difficultés.</label><br>
+            <label><input type="checkbox" name="peche" value="Je n’ai pas suffisamment recouru à la prière quand j’avais des soucis.">Je n’ai pas suffisamment recouru à la prière quand j’avais des soucis.</label><br>
+            <label><input type="checkbox" name="peche" value="J’ai dit — ou pensé — que la prière est inutile — parce que je n’étais pas exaucé tout de suite.">J’ai dit — ou pensé — que la prière est inutile — parce que je n’étais pas exaucé tout de suite.</label><br>
+            <label><input type="checkbox" name="peche" value="J’ai murmuré contre Dieu quand j’étais éprouvé, en pensant que je ne méritais pas de telles épreuves">J’ai murmuré contre Dieu quand j’étais éprouvé, en pensant que je ne méritais pas de telles épreuves</label><br>
+            <label><input type="checkbox" name="peche" value="J’ai trop présumé de mes propres forces en m’exposant au péché, me croyant assez fort pour résister à la tentation, et sans tenir compte des avertissements de l’Église.">J’ai trop présumé de mes propres forces en m’exposant au péché, me croyant assez fort pour résister à la tentation, et sans tenir compte des avertissements de l’Église.</label><br>
+            <label><input type="checkbox" name="peche" value="Je me suis découragé après le péché — ou j’ai eu du dépit&nbsp;; j’ai pensé que Dieu ne pouvait pas me pardonner, ou que mes efforts étaient inutiles (= péché de découragement).">Je me suis découragé après le péché — ou j’ai eu du dépit&nbsp;; j’ai pensé que Dieu ne pouvait pas me pardonner, ou que mes efforts étaient inutiles (= péché de découragement).</label><br>
+        </fieldset>
+
+        <fieldset>
+            <legend>La vertu de charité</legend>
+            <label><input type="checkbox" name="peche" value="Dieu n’occupe pas beaucoup de place dans mon esprit et dans ma vie.">Dieu n’occupe pas beaucoup de place dans mon esprit et dans ma vie.</label><br>
+            <label><input type="checkbox" name="peche" value="Je préfère à Dieu des créatures et je délaisse souvent Dieu pour leur faire plaisir.">Je préfère à Dieu des créatures et je délaisse souvent Dieu pour leur faire plaisir.</label><br>
+            <label><input type="checkbox" name="peche" value="Je ne suis pas attentif à la présence de Dieu dans ma vie.">Je ne suis pas attentif à la présence de Dieu dans ma vie.</label><br>
+            <label><input type="checkbox" name="peche" value="Je n’offre pas à Dieu mon travail, mes joies et mes peines.">Je n’offre pas à Dieu mon travail, mes joies et mes peines.</label><br>
+            <label><input type="checkbox" name="peche" value="Je ne m’efforce pas de voir Dieu dans les événements, je ne crois pas à sa Providence, et je ne sais pas lui rendre grâces.">Je ne m’efforce pas de voir Dieu dans les événements, je ne crois pas à sa Providence, et je ne sais pas lui rendre grâces.</label><br>
+            <label><input type="checkbox" name="peche" value="Je n’ai pas de charité surnaturelle envers moi-même. Je n’ai pas le souci de mon bien véritable et de ma perfection.">Je n’ai pas de charité surnaturelle envers moi-même. Je n’ai pas le souci de mon bien véritable et de ma perfection.</label><br>
+            <label><input type="checkbox" name="peche" value="Je crois que la morale naturelle est suffisante, et que les vertus surnaturelles ne sont pas nécessaires au salut.">Je crois que la morale naturelle est suffisante, et que les vertus surnaturelles ne sont pas nécessaires au salut.</label><br>
+            <label><input type="checkbox" name="peche" value="Je n’aime pas assez les autres&nbsp;: je ne fais pas assez d’efforts pour les comprendre, les aider, les encourager.">Je n’aime pas assez les autres&nbsp;: je ne fais pas assez d’efforts pour les comprendre, les aider, les encourager.</label><br>
+            <label><input type="checkbox" name="peche" value="Je n’ai pas le souci du salut des autres, et ne cherche pas à leur faire du bien.">Je n’ai pas le souci du salut des autres, et ne cherche pas à leur faire du bien.</label><br>
+            <label><input type="checkbox" name="peche" value="Il y a des personnes que je n’aime pas: je ne prie pas pour elles.">Il y a des personnes que je n’aime pas: je ne prie pas pour elles.</label><br>
+            <label><input type="checkbox" name="peche" value="Je garde rancune, et je ne cherche pas à me réconcilier après des fâcheries.">Je garde rancune, et je ne cherche pas à me réconcilier après des fâcheries.</label><br>
+            <label><input type="checkbox" name="peche" value="J’ai communié tout en ayant de l’animosité contre quelqu’un.">J’ai communié tout en ayant de l’animosité contre quelqu’un.</label><br>
+            <label><input type="checkbox" name="peche" value="Je ne suis pas assez reconnaissant envers ceux qui me font du bien.">Je ne suis pas assez reconnaissant envers ceux qui me font du bien.</label><br>
+            <label><input type="checkbox" name="peche" value="Je ne prie pas assez pour les défunts, et spécialement pour ceux qui m’ont fait du bien.">Je ne prie pas assez pour les défunts, et spécialement pour ceux qui m’ont fait du bien.</label><br>
+        </fieldset>
+
+        <fieldset>
+            <legend>Mes confessions</legend>
+            <label><input type="checkbox" name="peche" value="Je néglige de me confesser souvent.">Je néglige de me confesser souvent.</label><br>
+            <label><input type="checkbox" name="peche" value="Je ne prépare pas suffisamment mes confessions qui sont par conséquent banales et passe-partout.">Je ne prépare pas suffisamment mes confessions qui sont par conséquent banales et passe-partout.</label><br>
+            <label><input type="checkbox" name="peche" value="J’ai fait des confessions incomplètes par manque de sincérité.">J’ai fait des confessions incomplètes par manque de sincérité.</label><br>
+            <label><input type="checkbox" name="peche" value="Je n’ai pas un sincère repentir de mes fautes&nbsp;: je ne demande pas à Dieu la grâce de l’avoir.">Je n’ai pas un sincère repentir de mes fautes&nbsp;: je ne demande pas à Dieu la grâce de l’avoir.</label><br>
+            <label><input type="checkbox" name="peche" value="Je n’ai pas la volonté de me corriger de certains de mes défauts.">Je n’ai pas la volonté de me corriger de certains de mes défauts.</label><br>
+            <label><input type="checkbox" name="peche" value="Je n’ai pas fait correctement la pénitence que le prêtre m’avait donnée dans une de mes confessions précédentes.">Je n’ai pas fait correctement la pénitence que le prêtre m’avait donnée dans une de mes confessions précédentes.</label><br>
+            <label><input type="checkbox" name="peche" value="Je n’ai pas la douleur de voir Dieu tant offensé dans le monde.">Je n’ai pas la douleur de voir Dieu tant offensé dans le monde.</label><br>
+        </fieldset>
+
+        <fieldset>
+            <legend>La sainte eucharistie</legend>
+            <label><input type="checkbox" name="peche" value="J’assiste à la messe sans attention&nbsp;: je m’y tiens mal.">J’assiste à la messe sans attention&nbsp;: je m’y tiens mal.</label><br>
+            <label><input type="checkbox" name="peche" value="Je n’y participe pas correctement&nbsp;: je ne réponds pas aux prières du prêtre à haute voix et avec un effort convenable.">Je n’y participe pas correctement&nbsp;: je ne réponds pas aux prières du prêtre à haute voix et avec un effort convenable.</label><br>
+            <label><input type="checkbox" name="peche" value="Je n’écoute pas les lectures.">Je n’écoute pas les lectures.</label><br>
+            <label><input type="checkbox" name="peche" value="Je suis distrait — ou je dors — pendant les sermons.">Je suis distrait — ou je dors — pendant les sermons.</label><br>
+            <label><input type="checkbox" name="peche" value="Je suis négligent pour arriver à l’heure, c’est-à-dire avant les offices.">Je suis négligent pour arriver à l’heure, c’est-à-dire avant les offices.</label><br>
+            <label><input type="checkbox" name="peche" value="Je m’attarde devant l’église au lieu de rentrer avant la messe.">Je m’attarde devant l’église au lieu de rentrer avant la messe.</label><br>
+            <label><input type="checkbox" name="peche" value="Je ne suis pas attentif à respecter le silence à proximité de l’église pour aider la prière de ceux qui sont entrés.">Je ne suis pas attentif à respecter le silence à proximité de l’église pour aider la prière de ceux qui sont entrés.</label><br>
+            <label><input type="checkbox" name="peche" value="À la fin de la messe, je sors avant la bénédiction.">À la fin de la messe, je sors avant la bénédiction.</label><br>
+            <label><input type="checkbox" name="peche" value="Après la messe, je critique ce que j’ai vu ou entendu.">Après la messe, je critique ce que j’ai vu ou entendu.</label><br>
+            <label><input type="checkbox" name="peche" value="Je ne fais pas effort pour assister à la messe en semaine.">Je ne fais pas effort pour assister à la messe en semaine.</label><br>
+            <label><input type="checkbox" name="peche" value="Je suis venu à l’église en tenue immodeste.">Je suis venu à l’église en tenue immodeste.</label><br>
+            <label><input type="checkbox" name="peche" value="Je m’habille trop vulgairement pour venir à la messe, au lieu de me mettre en tenue de cérémonie comme le mérite le Saint Sacrifice.">Je m’habille trop vulgairement pour venir à la messe, au lieu de me mettre en tenue de cérémonie comme le mérite le Saint Sacrifice.</label><br>
+            <label><input type="checkbox" name="peche" value="J’ai négligé les offices autres que la messe (laudes, chapelets, adoration du Saint Sacrement, etc...).">J’ai négligé les offices autres que la messe (laudes, chapelets, adoration du Saint Sacrement, etc...).</label><br>
+            <label><input type="checkbox" name="peche" value="Je n’ai pas fait mon possible pour favoriser à mes proches l’assistance aux offices, et pour qu’ils puissent y arriver à l’heure.">Je n’ai pas fait mon possible pour favoriser à mes proches l’assistance aux offices, et pour qu’ils puissent y arriver à l’heure.</label><br>
+            <label><input type="checkbox" name="peche" value="J’ai mené les autres aux offices, et je n’ai pas daigné entrer dans l’église.">J’ai mené les autres aux offices, et je n’ai pas daigné entrer dans l’église.</label><br>
+            <label><input type="checkbox" name="peche" value="Je suis quelquefois entré dans l’église par besoin — sans même y faire une prière et une adoration.">Je suis quelquefois entré dans l’église par besoin — sans même y faire une prière et une adoration.</label><br>
+            <label><input type="checkbox" name="peche" value="Je communie trop rarement ou sans y penser.">Je communie trop rarement ou sans y penser.</label><br>
+            <label><input type="checkbox" name="peche" value="Je ne crois pas avec assez de force à la Présence réelle.">Je ne crois pas avec assez de force à la Présence réelle.</label><br>
+            <label><input type="checkbox" name="peche" value="J’ai communié sans être en état de grâce consciemment.">J’ai communié sans être en état de grâce consciemment.</label><br>
+            <label><input type="checkbox" name="peche" value="J’ai communié sans respecter intégralement les règles du jeûne eucharistique.">J’ai communié sans respecter intégralement les règles du jeûne eucharistique.</label><br>
+            <label><input type="checkbox" name="peche" value="Après mes communions, je ne me recueille pas dans une profonde action de grâces.">Après mes communions, je ne me recueille pas dans une profonde action de grâces.</label><br>
+            <label><input type="checkbox" name="peche" value="Dans la journée, je ne repense pas à ma communion du matin pour en garder les fruits.">Dans la journée, je ne repense pas à ma communion du matin pour en garder les fruits.</label><br>
+            <label><input type="checkbox" name="peche" value="Je ne fais jamais de visite au Saint-Sacrement, même quand je passe à côté de l’église ou que je vais au cimetière.">Je ne fais jamais de visite au Saint-Sacrement, même quand je passe à côté de l’église ou que je vais au cimetière.</label><br>
+            <label><input type="checkbox" name="peche" value="Quand je passe sur la route devant l’église, je ne fais pas un salut, ni un signe de croix, en pensant à Notre Seigneur qui est au tabernacle.">Quand je passe sur la route devant l’église, je ne fais pas un salut, ni un signe de croix, en pensant à Notre Seigneur qui est au tabernacle.</label><br>
+            <label><input type="checkbox" name="peche" value="Je critique facilement les personnes qui communient souvent, sous prétexte qu’elles ne paraissent pas meilleures que les autres.">Je critique facilement les personnes qui communient souvent, sous prétexte qu’elles ne paraissent pas meilleures que les autres.</label><br>
+        </fieldset>
+
+        <fieldset>
+            <legend>Les sacramentaux</legend>
+            <label><input type="checkbox" name="peche" value="Je traite sans respect des choses bénites&nbsp;: eau bénite, médailles, cierges, laurier béni, images pieuses, reliques, etc...">Je traite sans respect des choses bénites&nbsp;: eau bénite, médailles, cierges, laurier béni, images pieuses, reliques, etc...</label><br>
+            <label><input type="checkbox" name="peche" value="Je regarde avec indifférence les bénédictions rituelles de l’Église&nbsp;: maisons, véhicules, animaux, malades...">Je regarde avec indifférence les bénédictions rituelles de l’Église&nbsp;: maisons, véhicules, animaux, malades...</label><br>
+            <label><input type="checkbox" name="peche" value="J’attache à toutes ces choses une crédulité excessive et superstitieuse en leur attribuant une efficacité magique.">J’attache à toutes ces choses une crédulité excessive et superstitieuse en leur attribuant une efficacité magique.</label><br>
+            <label><input type="checkbox" name="peche" value="Je n’ai pas pris au sérieux les possibles manifestations diaboliques et exorcismes.">Je n’ai pas pris au sérieux les possibles manifestations diaboliques et exorcismes.</label><br>
+        </fieldset>
+
+
+        <h3>II° Commandement</h3>
+        <p class="center"><i>« Son Saint Nom tu respecteras, fuyant blasphème et faux serment. »</i></p>
+        <fieldset>
+            <label><input type="checkbox" name="peche" value="Dans un excès de colère, j’ai profané le saint nom de Dieu.">Dans un excès de colère, j’ai profané le saint nom de Dieu.</label><br>
+            <label><input type="checkbox" name="peche" value="J’ai été injurieux envers la religion, envers les prêtres, les sacrements, la piété des autres.">J’ai été injurieux envers la religion, envers les prêtres, les sacrements, la piété des autres.</label><br>
+            <label><input type="checkbox" name="peche" value="Je prononce facilement des jurons, des mots grossiers, orduriers, indignes de lèvres chrétiennes.">Je prononce facilement des jurons, des mots grossiers, orduriers, indignes de lèvres chrétiennes.</label><br>
+            <label><input type="checkbox" name="peche" value="Je ne cherche pas à me corriger des jurons que je dit.">Je ne cherche pas à me corriger des jurons que je dit.</label><br>
+            <label><input type="checkbox" name="peche" value="J’ai fait des serments sur des choses futiles, en disant légèrement «&nbsp;je le jure&nbsp;».">J’ai fait des serments sur des choses futiles, en disant légèrement «&nbsp;je le jure&nbsp;».</label><br>
+            <label><input type="checkbox" name="peche" value="J’ai juré pour soutenir un mensonge (= parjure).">J’ai juré pour soutenir un mensonge (= parjure).</label><br>
+            <label><input type="checkbox" name="peche" value="J’ai porté de faux témoignages devant la police, devant les tribunaux ou devant mes supérieurs.">J’ai porté de faux témoignages devant la police, devant les tribunaux ou devant mes supérieurs.</label><br>
+            <label><input type="checkbox" name="peche" value="J’ai refusé de témoigner quand je l’aurais pu, par exemple pour un accident.">J’ai refusé de témoigner quand je l’aurais pu, par exemple pour un accident.</label><br>
+            <label><input type="checkbox" name="peche" value="J’ai fait des vœux ou des promesses que je n’ai pas tenus.">J’ai fait des vœux ou des promesses que je n’ai pas tenus.</label><br>
+            <label><input type="checkbox" name="peche" value="J’ai traité irrespectueusement (en paroles ou en actes) des personnes ou des objets consacrés (= sacrilège).">J’ai traité irrespectueusement (en paroles ou en actes) des personnes ou des objets consacrés (= sacrilège).</label><br>
+        </fieldset>
+
+        <h3>IIIº Commandement</h3>
+        <p class="center"><i>« Le jour du Seigneur garderas, en servant Dieu dévotement. »</i></p>
+
+        <fieldset>
+            <legend>La messe du dimanche</legend>
+            <label><input type="checkbox" name="peche" value="J’ai manqué la messe le dimanche sans excuse grave (dites combien de fois).">J’ai manqué la messe le dimanche sans excuse grave (dites combien de fois).</label><br>
+            <label><input type="checkbox" name="peche" value="J’ai été cause que d’autres l’ont manquée (dites combien de personnes et combien de fois).">J’ai été cause que d’autres l’ont manquée (dites combien de personnes et combien de fois).</label><br>
+            <label><input type="checkbox" name="peche" value="Je suis arrivé en retard (à quel moment et combien de fois) par ma faute.">Je suis arrivé en retard (à quel moment et combien de fois) par ma faute.</label><br>
+            <label><input type="checkbox" name="peche" value="Je me suis dissipé pendant la messe et j’ai été cause de la dissipation des autres.">Je me suis dissipé pendant la messe et j’ai été cause de la dissipation des autres.</label><br>
+        </fieldset>
+
+        <fieldset>
+            <legend>Le repos du dimanche</legend>
+            <label><input type="checkbox" name="peche" value="Je n’ai pas demandé conseil pour savoir si mon travail du dimanche était absolument nécessaire.">Je n’ai pas demandé conseil pour savoir si mon travail du dimanche était absolument nécessaire.</label><br>
+            <label><input type="checkbox" name="peche" value="J’ai travaillé le dimanche sans nécessité absolue.">J’ai travaillé le dimanche sans nécessité absolue.</label><br>
+            <label><input type="checkbox" name="peche" value="J’ai fait travailler les autres, je les ai laissés travailler alors que j’aurais pu les en dissuader.">J’ai fait travailler les autres, je les ai laissés travailler alors que j’aurais pu les en dissuader.</label><br>
+            <label><input type="checkbox" name="peche" value="J’ai aidé les autres à travailler sans nécessité absolue&nbsp;: je n’ai pas osé refuser par respect humain.">J’ai aidé les autres à travailler sans nécessité absolue&nbsp;: je n’ai pas osé refuser par respect humain.</label><br>
+            <label><input type="checkbox" name="peche" value="J’ai exigé que d’autres me fassent un travail le dimanche, par égoïsme, sans nécessité.">J’ai exigé que d’autres me fassent un travail le dimanche, par égoïsme, sans nécessité.</label><br>
+            <label><input type="checkbox" name="peche" value="J’ai fait des courses en magasin ou sur internet le dimanche.">J’ai fait des courses en magasin ou sur internet le dimanche.</label><br>
+        </fieldset>
+
+        <fieldset>
+            <legend>La sanctification du jour du Seigneur</legend>
+            <label><input type="checkbox" name="peche" value="Je n’ai pas cherché à mettre dans mon dimanche plus de prières, ni de lectures spirituelles, que les autres jours.">Je n’ai pas cherché à mettre dans mon dimanche plus de prières, ni de lectures spirituelles, que les autres jours.</label><br>
+            <label><input type="checkbox" name="peche" value="Je n’ai pas aidé mes enfants à faire de leur dimanche une journée pour progresser dans la foi.">Je n’ai pas aidé mes enfants à faire de leur dimanche une journée pour progresser dans la foi.</label><br>
+            <label><input type="checkbox" name="peche" value="J’ai donné trop de place, le dimanche, à des loisirs légitimes (sport, pêche, chasse, promenades...) au détriment des exercices de piété ou des visites de charité.">J’ai donné trop de place, le dimanche, à des loisirs légitimes (sport, pêche, chasse, promenades...) au détriment des exercices de piété ou des visites de charité.</label><br>
+            <label><input type="checkbox" name="peche" value="Je n’ai pas vécu des loisirs légitimes du dimanche (sport, pêche, chasse, promenades...) dans un esprit de piété dû à ce jour.">Je n’ai pas vécu des loisirs légitimes du dimanche (sport, pêche, chasse, promenades...) dans un esprit de piété dû à ce jour.</label><br>
+            <label><input type="checkbox" name="peche" value="J’ai profané le dimanche par des divertissements coupables&nbsp;: mauvais films, fréquentations malsaines...">J’ai profané le dimanche par des divertissements coupables&nbsp;: mauvais films, fréquentations malsaines...</label><br>
+        </fieldset>
+
+
+        <h3>IV° Commandement</h3>
+        <p class="center"><i>«&nbsp;Tes père et mère honoreras, tes supérieurs pareillement.&nbsp;»</i></p>
+
+        <fieldset>
+            <legend>Ma vie familiale</legend>
+            <label><input type="checkbox" name="peche" value="Je n’aime pas assez mes parents, mes beaux-parents, mes grands-parents.">Je n’aime pas assez mes parents, mes beaux-parents, mes grands-parents.</label><br>
+            <label><input type="checkbox" name="peche" value="Je ne cherche pas à les rendre heureux, je ne les aide pas comme je le devrais matériellement et moralement.">Je ne cherche pas à les rendre heureux, je ne les aide pas comme je le devrais matériellement et moralement.</label><br>
+            <label><input type="checkbox" name="peche" value="Je suis dur avec eux, je leur parle sans respect.">Je suis dur avec eux, je leur parle sans respect.</label><br>
+            <label><input type="checkbox" name="peche" value="Je désobéis — j’obéis de mauvaise humeur.">Je désobéis — j’obéis de mauvaise humeur.</label><br>
+            <label><input type="checkbox" name="peche" value="J’ai de la haine et de la révolte envers les miens.">J’ai de la haine et de la révolte envers les miens.</label><br>
+            <label><input type="checkbox" name="peche" value="Je les ai injuriés.">Je les ai injuriés.</label><br>
+            <label><input type="checkbox" name="peche" value="Je les ai frappés.">Je les ai frappés.</label><br>
+            <label><input type="checkbox" name="peche" value="Je les ai dénigrés en parlant mal d’eux à des étrangers.">Je les ai dénigrés en parlant mal d’eux à des étrangers.</label><br>
+            <label><input type="checkbox" name="peche" value="Je rougis des miens devant les autres, à cause de leurs défauts ou de leur pauvreté.">Je rougis des miens devant les autres, à cause de leurs défauts ou de leur pauvreté.</label><br>
+            <label><input type="checkbox" name="peche" value="Je ne favorise pas la vie religieuse des miens comme je le devrais.">Je ne favorise pas la vie religieuse des miens comme je le devrais.</label><br>
+            <label><input type="checkbox" name="peche" value="J’ai tardé à procurer à des malades de ma famille les secours du prêtre.">J’ai tardé à procurer à des malades de ma famille les secours du prêtre.</label><br>
+            <label><input type="checkbox" name="peche" value="Je n’aime pas profondément mon époux (mon épouse).">Je n’aime pas profondément mon époux (mon épouse).</label><br>
+            <label><input type="checkbox" name="peche" value="Je lui rends la vie pénible par ma faute.">Je lui rends la vie pénible par ma faute.</label><br>
+            <label><input type="checkbox" name="peche" value="Je fais des dépenses égoïstes en ne pensant qu’à moi.">Je fais des dépenses égoïstes en ne pensant qu’à moi.</label><br>
+            <label><input type="checkbox" name="peche" value="Je suis hautain, capricieux, autoritaire.">Je suis hautain, capricieux, autoritaire.</label><br>
+            <label><input type="checkbox" name="peche" value="Je ne m’occupe pas assez de mes enfants, je ne leur donne pas assez de temps">Je ne m’occupe pas assez de mes enfants, je ne leur donne pas assez de temps</label><br>
+            <label><input type="checkbox" name="peche" value="Je les gâte trop, je suis trop faible dans leur éducation.">Je les gâte trop, je suis trop faible dans leur éducation.</label><br>
+            <label><input type="checkbox" name="peche" value="J’ai refusé, sans raison valable, de nourrir mon enfant après sa naissance (faute grave).">J’ai refusé, sans raison valable, de nourrir mon enfant après sa naissance (faute grave).</label><br>
+            <label><input type="checkbox" name="peche" value="Je me suis opposé à la vocation religieuse d’un enfant, ou je n’ai rien fait pour l’aider.">Je me suis opposé à la vocation religieuse d’un enfant, ou je n’ai rien fait pour l’aider.</label><br>
+            <label><input type="checkbox" name="peche" value="Je suis trop dur avec mes enfants, pas assez calme, patient et compréhensif.">Je suis trop dur avec mes enfants, pas assez calme, patient et compréhensif.</label><br>
+            <label><input type="checkbox" name="peche" value="Je ne me soucie pas assez de l’exemple que je leur donne, je ne réfléchis pas au scandale que peut leur donner ma manière de vivre.">Je ne me soucie pas assez de l’exemple que je leur donne, je ne réfléchis pas au scandale que peut leur donner ma manière de vivre.</label><br>
+            <label><input type="checkbox" name="peche" value="J’ai attendu trop longtemps pour faire baptiser un enfant.">J’ai attendu trop longtemps pour faire baptiser un enfant.</label><br>
+            <label><input type="checkbox" name="peche" value="Je ne parle pas assez de Dieu à mes enfants.">Je ne parle pas assez de Dieu à mes enfants.</label><br>
+            <label><input type="checkbox" name="peche" value="Je ne prie pas avec eux et devant eux.">Je ne prie pas avec eux et devant eux.</label><br>
+            <label><input type="checkbox" name="peche" value="Je ne contrôle pas leur manière de vivre en société, à l’école, dans leurs loisirs.">Je ne contrôle pas leur manière de vivre en société, à l’école, dans leurs loisirs.</label><br>
+            <label><input type="checkbox" name="peche" value="Je ne m’inquiète pas assez de leur formation religieuse&nbsp;: je ne collabore pas assez avec le prêtre pour le progrès spirituel de mes enfants.">Je ne m’inquiète pas assez de leur formation religieuse&nbsp;: je ne collabore pas assez avec le prêtre pour le progrès spirituel de mes enfants.</label><br>
+            <label><input type="checkbox" name="peche" value="Je laisse à mes enfants trop de liberté pour la radio, la télévision, les lectures, les fréquentations des camarades qui peuvent exposer leur foi.">Je laisse à mes enfants trop de liberté pour la radio, la télévision, les lectures, les fréquentations des camarades qui peuvent exposer leur foi.</label><br>
+            <label><input type="checkbox" name="peche" value="Je les laisse sacrifier leur vie religieuse pour le sport.">Je les laisse sacrifier leur vie religieuse pour le sport.</label><br>
+            <label><input type="checkbox" name="peche" value="J’ai contrarié l’orientation professionnelle d’un de mes enfants.">J’ai contrarié l’orientation professionnelle d’un de mes enfants.</label><br>
+        </fieldset>
+
+        <fieldset>
+            <legend>Ma vie civique</legend>
+            <label><input type="checkbox" name="peche" value="Je n’aime pas ma patrie, je n’ai pas le souci de la voir revenir à Dieu, je ne prie pas pour son bien.">Je n’aime pas ma patrie, je n’ai pas le souci de la voir revenir à Dieu, je ne prie pas pour son bien.</label><br>
+            <label><input type="checkbox" name="peche" value="Je m’accommode du laïcisme.">Je m’accommode du laïcisme.</label><br>
+            <label><input type="checkbox" name="peche" value="Je décline toute responsabilité politique, et je ne me dévoue pas au bien public quand l’occasion se présente.">Je décline toute responsabilité politique, et je ne me dévoue pas au bien public quand l’occasion se présente.</label><br>
+            <label><input type="checkbox" name="peche" value="Je suis inscrit à un groupe politique, syndical ou idéologique nuisible à la religion (Franc-Maçonnerie, communisme, libre-pensée, etc.).">Je suis inscrit à un groupe politique, syndical ou idéologique nuisible à la religion (Franc-Maçonnerie, communisme, libre-pensée, etc.).</label><br>
+            <label><input type="checkbox" name="peche" value="J’ai chassé — j’ai pêché — j’ai conduit des véhicules — sans permis, ou sans les formalités administratives requises.">J’ai chassé — j’ai pêché — j’ai conduit des véhicules — sans permis, ou sans les formalités administratives requises.</label><br>
+            <label><input type="checkbox" name="peche" value="J’ai violé consciemment quelque loi civile légitime.">J’ai violé consciemment quelque loi civile légitime.</label><br>
+            <label><input type="checkbox" name="peche" value="J’ai commis volontairement des infractions au code de la route.">J’ai commis volontairement des infractions au code de la route.</label><br>
+            <label><input type="checkbox" name="peche" value="Je ne soutiens pas l’école chrétienne.">Je ne soutiens pas l’école chrétienne.</label><br>
+
+        </fieldset><fieldset>
+        <legend>Ma vie professionnelle</legend>
+        <label><input type="checkbox" name="peche" value="Je suis dur et autoritaire avec mes employés.">Je suis dur et autoritaire avec mes employés.</label><br>
+        <label><input type="checkbox" name="peche" value="Je ne favorise pas de mon mieux la vie religieuse de mes employés.">Je ne favorise pas de mon mieux la vie religieuse de mes employés.</label><br>
+        <label><input type="checkbox" name="peche" value="Je n’ai pas le souci de la tenue matérielle et morale des lieux de travail&nbsp;: j’y laisse traîner des affiches indécentes.">Je n’ai pas le souci de la tenue matérielle et morale des lieux de travail&nbsp;: j’y laisse traîner des affiches indécentes.</label><br>
+        <label><input type="checkbox" name="peche" value="Je suis incorrect avec mes patrons.">Je suis incorrect avec mes patrons.</label><br>
+        <label><input type="checkbox" name="peche" value="Je désobéis à mes patrons.">Je désobéis à mes patrons.</label><br>
+        <label><input type="checkbox" name="peche" value="J’entretiens le mauvais esprit dans mon groupe de travail.">J’entretiens le mauvais esprit dans mon groupe de travail.</label><br>
+        <label><input type="checkbox" name="peche" value="Je participe à des activités subversives qui troublent le travail au lieu de chercher la paix sociale.">Je participe à des activités subversives qui troublent le travail au lieu de chercher la paix sociale.</label><br>
+        <label><input type="checkbox" name="peche" value="Je suis jaloux de me collègues de travail.">Je suis jaloux de me collègues de travail.</label><br>
+    </fieldset>
+
+        <h3>V° Commandement</h3>
+        <p class="center"><i>«&nbsp;Meurtre et scandale éviteras, haine et colère pareillement.&nbsp;»</i></p>
+
+        <fieldset>
+            <label><input type="checkbox" name="peche" value="Je suis méchant.">Je suis méchant.</label><br>
+            <label><input type="checkbox" name="peche" value="J’ai eu des disputes violentes, des discussions passionnées et autoritaires.">J’ai eu des disputes violentes, des discussions passionnées et autoritaires.</label><br>
+            <label><input type="checkbox" name="peche" value="J’ai donné des coups.">J’ai donné des coups.</label><br>
+            <label><input type="checkbox" name="peche" value="Je me suis vengé.">Je me suis vengé.</label><br>
+            <label><input type="checkbox" name="peche" value="J’ai désiré me venger (sans pouvoir le faire).">J’ai désiré me venger (sans pouvoir le faire).</label><br>
+            <label><input type="checkbox" name="peche" value="Je garde de la haine, de la rancune.">Je garde de la haine, de la rancune.</label><br>
+            <label><input type="checkbox" name="peche" value="J’ai souhaité du mal à autrui.">J’ai souhaité du mal à autrui.</label><br>
+            <label><input type="checkbox" name="peche" value="Je me suis réjoui des épreuves des autres.">Je me suis réjoui des épreuves des autres.</label><br>
+            <label><input type="checkbox" name="peche" value="J’ai dit des paroles blessantes avec l’intention de faire de la peine.">J’ai dit des paroles blessantes avec l’intention de faire de la peine.</label><br>
+            <label><input type="checkbox" name="peche" value="Je ne souhaite pas de bien à ceux qui me sont antipathiques.">Je ne souhaite pas de bien à ceux qui me sont antipathiques.</label><br>
+            <label><input type="checkbox" name="peche" value="Je suis jaloux du bien qui arrive aux autres.">Je suis jaloux du bien qui arrive aux autres.</label><br>
+            <label><input type="checkbox" name="peche" value="Je ne cherche pas à réconforter les malheureux.">Je ne cherche pas à réconforter les malheureux.</label><br>
+            <label><input type="checkbox" name="peche" value="Je méprise les autres à cause de leurs défauts.">Je méprise les autres à cause de leurs défauts.</label><br>
+            <label><input type="checkbox" name="peche" value="Je n’ai pas le souci des mauvais exemples que je donne en étant un chrétien médiocre.">Je n’ai pas le souci des mauvais exemples que je donne en étant un chrétien médiocre.</label><br>
+            <label><input type="checkbox" name="peche" value="J’ai scandalisé par des paroles, des conseils, des comportements, des chansons, des livres ou journaux que j’ai prêtés.">J’ai scandalisé par des paroles, des conseils, des comportements, des chansons, des livres ou journaux que j’ai prêtés.</label><br>
+            <label><input type="checkbox" name="peche" value="J’ai provoqué des accidents, des blessures ou des morts par imprudence, et j’y suis resté indifférent parce que j’étais «&nbsp;assuré&nbsp;».">J’ai provoqué des accidents, des blessures ou des morts par imprudence, et j’y suis resté indifférent parce que j’étais «&nbsp;assuré&nbsp;».</label><br>
+            <label><input type="checkbox" name="peche" value="Je me suis attardé à des pensées de suicide.">Je me suis attardé à des pensées de suicide.</label><br>
+            <label><input type="checkbox" name="peche" value="J’ai désiré, demandé, conseillé, pratiqué un avortement ou j’y ai participé.">J’ai désiré, demandé, conseillé, pratiqué un avortement ou j’y ai participé.</label><br>
+        </fieldset>
+
+        <h3>VI° et IX° commandements</h3>
+        <p class="center"><i>«&nbsp;La pureté observeras en tes actes soigneusement.&nbsp;»</i></p>
+        <p class="center"><i>«&nbsp;En pensées, désirs veilleras à rester pur entièrement.&nbsp;»</i></p>
+
+        <fieldset>
+            <legend>Discipline des sens&nbsp;; modestie</legend>
+            <label><input type="checkbox" name="peche" value="J’ai entretenu dans mon esprit des pensées, des rêveries et des désirs impurs.">J’ai entretenu dans mon esprit des pensées, des rêveries et des désirs impurs.</label><br>
+            <label><input type="checkbox" name="peche" value="J’ai porté volontairement et inutilement mes regards sur des choses obscènes&nbsp;: affiches, presse, photographies, toilettes immodestes.">J’ai porté volontairement et inutilement mes regards sur des choses obscènes&nbsp;: affiches, presse, photographies, toilettes immodestes.</label><br>
+            <label><input type="checkbox" name="peche" value="J’ai regardé des films sans tenir compte de la cote morale (cinéma ou télévision).">J’ai regardé des films sans tenir compte de la cote morale (cinéma ou télévision).</label><br>
+            <label><input type="checkbox" name="peche" value="J’ai lu des récits inconvenants.">J’ai lu des récits inconvenants.</label><br>
+            <label><input type="checkbox" name="peche" value="J’ai laissé traîner sur les tables de la presse indécente.">J’ai laissé traîner sur les tables de la presse indécente.</label><br>
+            <label><input type="checkbox" name="peche" value="J’ai chanté — ou écouté chanter — des chansons indécentes.">J’ai chanté — ou écouté chanter — des chansons indécentes.</label><br>
+            <label><input type="checkbox" name="peche" value="J’ai chanté ou fait jouer de mauvaises chansons en présence d’autres personnes, causant ainsi du scandale.">J’ai chanté ou fait jouer de mauvaises chansons en présence d’autres personnes, causant ainsi du scandale.</label><br>
+            <label><input type="checkbox" name="peche" value="Je me suis entretenu inutilement de choses impures.">Je me suis entretenu inutilement de choses impures.</label><br>
+            <label><input type="checkbox" name="peche" value="J’ai fréquenté des lieux de luxure&nbsp;: j’y ai entraîné d’autres personnes.">J’ai fréquenté des lieux de luxure&nbsp;: j’y ai entraîné d’autres personnes.</label><br>
+            <label><input type="checkbox" name="peche" value="J’ai satisfait ma curiosité malsaine — sans nécessité — sur les choses sexuelles.">J’ai satisfait ma curiosité malsaine — sans nécessité — sur les choses sexuelles.</label><br>
+            <label><input type="checkbox" name="peche" value="J’ai eu des gestes indécents, des familiarités coupables — ou je les ai permises à d’autres sur moi.">J’ai eu des gestes indécents, des familiarités coupables — ou je les ai permises à d’autres sur moi.</label><br>
+            <label><input type="checkbox" name="peche" value="J’ai fait des actes sexuels — seul — ou avec d’autres (mentionnez s’il s’agit d’une autre personne de votre sexe ou non, mariée ou non, et combien de fois).">J’ai fait des actes sexuels — seul — ou avec d’autres (mentionnez s’il s’agit d’une autre personne de votre sexe ou non, mariée ou non, et combien de fois).</label><br>
+            <label><input type="checkbox" name="peche" value="J’ai porté des toilettes qui ne me couvraient pas suffisamment, — j’ai eu des attitudes inconvenantes&nbsp;: j’ai négligé le scandale que je causais en étant une occasion de péché.">J’ai porté des toilettes qui ne me couvraient pas suffisamment, — j’ai eu des attitudes inconvenantes&nbsp;: j’ai négligé le scandale que je causais en étant une occasion de péché.</label><br>
+            <label><input type="checkbox" name="peche" value="Je m’habille trop légèrement pour travailler dans mon milieu familial, par manque de mortification.">Je m’habille trop légèrement pour travailler dans mon milieu familial, par manque de mortification.</label><br>
+        </fieldset>
+
+        <fieldset>
+            <legend>Vie conjugale</legend>
+            <label><input type="checkbox" name="peche" value="J’ai manqué à la fidélité conjugale, en pensée, en désir, en acte (dans ce dernier cas, combien de fois&nbsp;?).">J’ai manqué à la fidélité conjugale, en pensée, en désir, en acte (dans ce dernier cas, combien de fois&nbsp;?).</label><br>
+            <label><input type="checkbox" name="peche" value="J’ai cherché à plaire à d’autres qu’à mon conjoint, et recherché leur compagnie.">J’ai cherché à plaire à d’autres qu’à mon conjoint, et recherché leur compagnie.</label><br>
+            <label><input type="checkbox" name="peche" value="J’ai triché avec les lois de la fécondité&nbsp;: acte conjugal inachevé, contraceptifs, préservatifs, actes contre-nature.">J’ai triché avec les lois de la fécondité&nbsp;: acte conjugal inachevé, contraceptifs, préservatifs, actes contre-nature.</label><br>
+            <label><input type="checkbox" name="peche" value="Je cohabite en concubinage.">Je cohabite en concubinage.</label><br>
+            <label><input type="checkbox" name="peche" value="Je suis uni seulement à la mairie alors que je suis baptisé(e). (Demandez alors des conseils à votre confesseur.)">Je suis uni seulement à la mairie alors que je suis baptisé(e). (Demandez alors des conseils à votre confesseur.)</label><br>
+            <label><input type="checkbox" name="peche" value="J’ai refusé le devoir conjugal à mon conjoint sans motif légitime, je ne l’ai accordé qu’avec mauvaise humeur.">J’ai refusé le devoir conjugal à mon conjoint sans motif légitime, je ne l’ai accordé qu’avec mauvaise humeur.</label><br>
+            <label><input type="checkbox" name="peche" value="Je n’ai pas proposé le devoir conjugal quand je savais que mon conjoint le désirait.">Je n’ai pas proposé le devoir conjugal quand je savais que mon conjoint le désirait.</label><br>
+            <label><input type="checkbox" name="peche" value="J’ai volontairement et indûment limité les naissances dans mon foyer.">J’ai volontairement et indûment limité les naissances dans mon foyer.</label><br>
+        </fieldset>
+
+        <h3>VII° et X° commandements</h3>
+        <p class="center"><i>«&nbsp;Le bien d’autrui tu ne prendras ni retiendras injustement.&nbsp;»</i></p>
+        <p class="center"><i>«&nbsp;Bien d’autrui ne convoiteras pour l’avoir malhonnêtement.&nbsp;»</i></p>
+
+        <fieldset>
+            <label><input type="checkbox" name="peche" value="J’ai volé (dites quelle valeur, au moins approximativement, ou précisez l’objet volé).">J’ai volé (dites quelle valeur, au moins approximativement, ou précisez l’objet volé).</label><br>
+            <label><input type="checkbox" name="peche" value="J’ai gardé des objets trouvés sans les déclarer.">J’ai gardé des objets trouvés sans les déclarer.</label><br>
+            <label><input type="checkbox" name="peche" value="J’ai gardé des objets empruntés.">J’ai gardé des objets empruntés.</label><br>
+            <label><input type="checkbox" name="peche" value="J’ai triché dans un héritage avec mes cohéritiers, j’ai lésé mes héritiers dans mon testament.">J’ai triché dans un héritage avec mes cohéritiers, j’ai lésé mes héritiers dans mon testament.</label><br>
+            <label><input type="checkbox" name="peche" value="J’ai trompé dans les marchés ou les transactions.">J’ai trompé dans les marchés ou les transactions.</label><br>
+            <label><input type="checkbox" name="peche" value="J’ai triché dans les jeux.">J’ai triché dans les jeux.</label><br>
+            <label><input type="checkbox" name="peche" value="J’ai extorqué par ruse, injustement, des avantages (salaires, retraites, pensions, subventions).">J’ai extorqué par ruse, injustement, des avantages (salaires, retraites, pensions, subventions).</label><br>
+            <label><input type="checkbox" name="peche" value="J’ai pratiqué «&nbsp;le système D&nbsp;», le «&nbsp;piston&nbsp;» pour me procurer quelque avantage auquel je n’ai pas droit normalement.">J’ai pratiqué «&nbsp;le système D&nbsp;», le «&nbsp;piston&nbsp;» pour me procurer quelque avantage auquel je n’ai pas droit normalement.</label><br>
+            <label><input type="checkbox" name="peche" value="J’ai tardé, par négligence, à payer mes dettes.">J’ai tardé, par négligence, à payer mes dettes.</label><br>
+            <label><input type="checkbox" name="peche" value="J’ai laissé traîner indûment des notes chez des commerçants.">J’ai laissé traîner indûment des notes chez des commerçants.</label><br>
+            <label><input type="checkbox" name="peche" value="J’ai laissé abîmer le bien des voisins par mes bêtes ou mes machines — sans chercher à réparer les dégâts.">J’ai laissé abîmer le bien des voisins par mes bêtes ou mes machines — sans chercher à réparer les dégâts.</label><br>
+            <label><input type="checkbox" name="peche" value="Je me suis servi sans permission préalable et sans gêne du bien des autres.">Je me suis servi sans permission préalable et sans gêne du bien des autres.</label><br>
+            <label><input type="checkbox" name="peche" value="J’ai provoqué aux autres des préjudices, par exemple en accrochant une voiture, et je n’ai pas révélé mon identité (le tort causé peut être considérable et constituer un péché très grave).">J’ai provoqué aux autres des préjudices, par exemple en accrochant une voiture, et je n’ai pas révélé mon identité (le tort causé peut être considérable et constituer un péché très grave).</label><br>
+            <label><input type="checkbox" name="peche" value="Je n’ai pas versé le denier de l’Église.">Je n’ai pas versé le denier de l’Église.</label><br>
+            <label><input type="checkbox" name="peche" value="J’ai refusé d’aider les plus démunis que moi, alors que je l’aurais pu.">J’ai refusé d’aider les plus démunis que moi, alors que je l’aurais pu.</label><br>
+            <label><input type="checkbox" name="peche" value="J’ai refusé l’aumône à des pauvres.">J’ai refusé l’aumône à des pauvres.</label><br>
+            <label><input type="checkbox" name="peche" value="Je ne suis pas généreux pour les quêtes et les bonnes œuvres.">Je ne suis pas généreux pour les quêtes et les bonnes œuvres.</label><br>
+            <label><input type="checkbox" name="peche" value="Je gaspille l’argent à des choses superflues, — j’entretiens chez moi un luxe inutile.">Je gaspille l’argent à des choses superflues, — j’entretiens chez moi un luxe inutile.</label><br>
+            <label><input type="checkbox" name="peche" value="J’ai fraudé avec les impôts.">J’ai fraudé avec les impôts.</label><br>
+        </fieldset>
+
+        <fieldset>
+            <legend>Justice sociale</legend>
+            <label><input type="checkbox" name="peche" value="Je ne donne pas un juste salaire à mes employés.">Je ne donne pas un juste salaire à mes employés.</label><br>
+            <label><input type="checkbox" name="peche" value="Je n’observe pas la législation sociale concernant le travail.">Je n’observe pas la législation sociale concernant le travail.</label><br>
+            <label><input type="checkbox" name="peche" value="J’ai triché dans mon travail et j’ai lésé mon employeur (retard dans les horaires, tricherie pour les visites médicales, grignotage sur le temps de travail, etc.).">J’ai triché dans mon travail et j’ai lésé mon employeur (retard dans les horaires, tricherie pour les visites médicales, grignotage sur le temps de travail, etc.).</label><br>
+            <label><input type="checkbox" name="peche" value="Je me sers au travail, emportant pour mon usage des choses qui ne m’appartiennent pas (fournitures de bureau, produits pharmaceutiques, etc.)">Je me sers au travail, emportant pour mon usage des choses qui ne m’appartiennent pas (fournitures de bureau, produits pharmaceutiques, etc.)</label><br>
+            <label><input type="checkbox" name="peche" value="J’ai traduit quelqu’un devant les tribunaux, alors que j’aurais pu l’éviter.">J’ai traduit quelqu’un devant les tribunaux, alors que j’aurais pu l’éviter.</label><br>
+        </fieldset>
+
+        <h3>VIII° commandement</h3>
+        <p class="center"><i>«&nbsp;La médisance banniras et le mensonge également.&nbsp;»</i></p>
+
+        <fieldset>
+            <legend>Mensonge</legend>
+            <label><input type="checkbox" name="peche" value="J’ai menti ou déformé la vérité — par vantardise ou par intérêt, ou pour tenter de me disculper, ou pour nuire à quelqu’un.">J’ai menti ou déformé la vérité — par vantardise ou par intérêt, ou pour tenter de me disculper, ou pour nuire à quelqu’un.</label><br>
+            <label><input type="checkbox" name="peche" value="J’ai menti à mes supérieurs — à mon conjoint — à mes enfants.">J’ai menti à mes supérieurs — à mon conjoint — à mes enfants.</label><br>
+            <label><input type="checkbox" name="peche" value="J’ai fait dire des mensonges à mes enfants.">J’ai fait dire des mensonges à mes enfants.</label><br>
+            <label><input type="checkbox" name="peche" value="J’ai menti à mon confesseur.">J’ai menti à mon confesseur.</label><br>
+        </fieldset>
+
+        <fieldset>
+            <legend>Médisances — calomnies — jugements téméraires — indiscrétions</legend>
+            <label><input type="checkbox" name="peche" value="J’ai dit du mal vrai sur mon prochain sans raison valable.">J’ai dit du mal vrai sur mon prochain sans raison valable.</label><br>
+            <label><input type="checkbox" name="peche" value="J’ai dit du mal faux sur mon prochain, j’ai inventé du mal, j’ai grossi le mal que je savais.">J’ai dit du mal faux sur mon prochain, j’ai inventé du mal, j’ai grossi le mal que je savais.</label><br>
+            <label><input type="checkbox" name="peche" value="J’ai dit du mal dont je n’étais pas sûr, que j’ai répété après les autres de manière inconsidérée, sans preuves.">J’ai dit du mal dont je n’étais pas sûr, que j’ai répété après les autres de manière inconsidérée, sans preuves.</label><br>
+            <label><input type="checkbox" name="peche" value="J’ai pris plaisir à divulguer du mal sur les autres, par vengeance ou malice.">J’ai pris plaisir à divulguer du mal sur les autres, par vengeance ou malice.</label><br>
+            <label><input type="checkbox" name="peche" value="J’ai soupçonné les autres sans preuve suffisante.">J’ai soupçonné les autres sans preuve suffisante.</label><br>
+            <label><input type="checkbox" name="peche" value="J’ai écrit des lettres anonymes.">J’ai écrit des lettres anonymes.</label><br>
+            <label><input type="checkbox" name="peche" value="J’ai porté faux témoignage devant la police — ou devant les tribunaux.">J’ai porté faux témoignage devant la police — ou devant les tribunaux.</label><br>
+            <label><input type="checkbox" name="peche" value="J’ai raconté — ou répété — des choses préjudiciables aux prêtres ou à l’Église.">J’ai raconté — ou répété — des choses préjudiciables aux prêtres ou à l’Église.</label><br>
+            <label><input type="checkbox" name="peche" value="J’ai révélé sans nécessité des choses secrètes.">J’ai révélé sans nécessité des choses secrètes.</label><br>
+            <label><input type="checkbox" name="peche" value="J’ai révélé des secrets qu’on m’avait confiés (vous en dites la nature, sinon la matière, pour que le confesseur puisse en apprécier la gravité, mais sans jamais nommer des personnes).">J’ai révélé des secrets qu’on m’avait confiés (vous en dites la nature, sinon la matière, pour que le confesseur puisse en apprécier la gravité, mais sans jamais nommer des personnes).</label><br>
+            <label><input type="checkbox" name="peche" value="J’ai parlé de choses qui m’ont été dites en confession.">J’ai parlé de choses qui m’ont été dites en confession.</label><br>
+            <label><input type="checkbox" name="peche" value="J’ai ouvert des lettres destinées à autrui. (Les parents en ont le droit pour les enfants.)">J’ai ouvert des lettres destinées à autrui. (Les parents en ont le droit pour les enfants.)</label><br>
+            <label><input type="checkbox" name="peche" value="J’ai lu des lettres destinées à autrui et que j’avais ouvertes involontairement.">J’ai lu des lettres destinées à autrui et que j’avais ouvertes involontairement.</label><br>
+            <label><input type="checkbox" name="peche" value="J’ai écouté — ou entendu involontairement sans m’éloigner — la confession d’une autre personne.">J’ai écouté — ou entendu involontairement sans m’éloigner — la confession d’une autre personne.</label><br>
+            <label><input type="checkbox" name="peche" value="J’ai critiqué, devant autrui, des conseils ou des avis que j’avais reçus en confession.">J’ai critiqué, devant autrui, des conseils ou des avis que j’avais reçus en confession.</label><br>
+        </fieldset>
+
+        <h3>Les commandements de l’Église</h3>
+
+        <fieldset>
+            <label><input type="checkbox" name="peche" value="Je ne crois pas suffisamment au caractère divin de l’Église catholique.">Je ne crois pas suffisamment au caractère divin de l’Église catholique.</label><br>
+            <label><input type="checkbox" name="peche" value="Je mets l’Église catholique sur le même pied que d’autres confessions.">Je mets l’Église catholique sur le même pied que d’autres confessions.</label><br>
+            <label><input type="checkbox" name="peche" value="Je n’ai pas la soumission profonde et filiale à l’Église&nbsp;: je discute son enseignement, et critique au lieu de lui obéir.">Je n’ai pas la soumission profonde et filiale à l’Église&nbsp;: je discute son enseignement, et critique au lieu de lui obéir.</label><br>
+            <label><input type="checkbox" name="peche" value="Je n’ai pas le souci de faire aimer l’Église et de la faire progresser par ma manière de me comporter.">Je n’ai pas le souci de faire aimer l’Église et de la faire progresser par ma manière de me comporter.</label><br>
+            <label><input type="checkbox" name="peche" value="Je n’ai pas assez le sens du baptême, qui m’a fait fils de l’Église.">Je n’ai pas assez le sens du baptême, qui m’a fait fils de l’Église.</label><br>
+            <label><input type="checkbox" name="peche" value="Je n’aide pas financièrement l’Église comme je le pourrais (missions, écoles, séminaires).">Je n’aide pas financièrement l’Église comme je le pourrais (missions, écoles, séminaires).</label><br>
+            <label><input type="checkbox" name="peche" value="Je ne jeûne pas — alors que j’y suis tenu et que je le pourrais.">Je ne jeûne pas — alors que j’y suis tenu et que je le pourrais.</label><br>
+            <label><input type="checkbox" name="peche" value="J’ai mangé de la viande les jours d’abstinence obligatoire.">J’ai mangé de la viande les jours d’abstinence obligatoire.</label><br>
+            <label><input type="checkbox" name="peche" value="J’ai mangé de la viande les vendredis ordinaires — sans compenser cette abstinence par une autre pénitence.">J’ai mangé de la viande les vendredis ordinaires — sans compenser cette abstinence par une autre pénitence.</label><br>
+            <label><input type="checkbox" name="peche" value="Je ne prie pas pour le pape — ni pour les prêtres — ni pour les vocations.">Je ne prie pas pour le pape — ni pour les prêtres — ni pour les vocations.</label><br>
+            <label><input type="checkbox" name="peche" value="Je m’obstine à «&nbsp;faire mes Pâques&nbsp;» sans être fidèle à la messe dominicale, et j’accumule ainsi les sacrilèges.">Je m’obstine à «&nbsp;faire mes Pâques&nbsp;» sans être fidèle à la messe dominicale, et j’accumule ainsi les sacrilèges.</label><br>
+        </fieldset>
+
+        <h3>Les péchés capitaux</h3>
+
+        <fieldset>
+            <legend>Orgueil</legend>
+            <label><input type="checkbox" name="peche" value="Je suis orgueilleux — arrogant — autoritaire.">Je suis orgueilleux — arrogant — autoritaire.</label><br>
+            <label><input type="checkbox" name="peche" value="Je me crois meilleur que les autres, et je me mets facilement en relief quand j’en ai l’occasion.">Je me crois meilleur que les autres, et je me mets facilement en relief quand j’en ai l’occasion.</label><br>
+            <label><input type="checkbox" name="peche" value="J’accepte difficilement d’être humilié.">J’accepte difficilement d’être humilié.</label><br>
+            <label><input type="checkbox" name="peche" value="Je suis susceptible, et je supporte mal les plaisanteries qui me sont défavorables.">Je suis susceptible, et je supporte mal les plaisanteries qui me sont défavorables.</label><br>
+            <label><input type="checkbox" name="peche" value="Je suis vaniteux dans ma toilette, et je cherche à plaire.">Je suis vaniteux dans ma toilette, et je cherche à plaire.</label><br>
+            <label><input type="checkbox" name="peche" value="Je suis obstiné dans mes idées, sans chercher à les confronter avec la vérité (entêtement et opiniâtreté)">Je suis obstiné dans mes idées, sans chercher à les confronter avec la vérité (entêtement et opiniâtreté)</label><br>
+
+        </fieldset><fieldset>
+        <legend>Avarice, attachement aux biens matériels</legend>
+        <label><input type="checkbox" name="peche" value="Je suis attaché à l’argent, aux biens matériels, et trop peu aux biens spirituels.">Je suis attaché à l’argent, aux biens matériels, et trop peu aux biens spirituels.</label><br>
+        <label><input type="checkbox" name="peche" value="J’aime le luxe, le confort, le mobilier.">J’aime le luxe, le confort, le mobilier.</label><br>
+        <label><input type="checkbox" name="peche" value="J’ai toujours peur de manquer du nécessaire et je ne cherche pas à  partager.">J’ai toujours peur de manquer du nécessaire et je ne cherche pas à  partager.</label><br>
+        <label><input type="checkbox" name="peche" value="Je refuse de prêter ce qui m’appartient, ou je ne le prête pas de bon coeur.">Je refuse de prêter ce qui m’appartient, ou je ne le prête pas de bon coeur.</label><br>
+        <label><input type="checkbox" name="peche" value="Je suis pointilleux pour défendre mes biens.">Je suis pointilleux pour défendre mes biens.</label><br>
+
+    </fieldset><fieldset>
+        <legend>Jalousie et envie</legend>
+        <label><input type="checkbox" name="peche" value="Je suis jaloux des autres, de leurs biens, de leurs qualités, de leurs succès.">Je suis jaloux des autres, de leurs biens, de leurs qualités, de leurs succès.</label><br>
+        <label><input type="checkbox" name="peche" value="Je me réjouis quand il leur arrive des choses désagréables, et je m’attriste de leur bonheur.">Je me réjouis quand il leur arrive des choses désagréables, et je m’attriste de leur bonheur.</label><br>
+        <label><input type="checkbox" name="peche" value="J’ai souhaité du mal aux autres.">J’ai souhaité du mal aux autres.</label><br>
+
+    </fieldset><fieldset>
+        <legend>Gourmandise</legend>
+        <label><input type="checkbox" name="peche" value="Je donne beaucoup d’importance aux plaisirs de la table.">Je donne beaucoup d’importance aux plaisirs de la table.</label><br>
+        <label><input type="checkbox" name="peche" value="Je mange plus que le nécessaire.">Je mange plus que le nécessaire.</label><br>
+        <label><input type="checkbox" name="peche" value="Je fais des excès de boissons alcoolisées.">Je fais des excès de boissons alcoolisées.</label><br>
+        <label><input type="checkbox" name="peche" value="Je ne surveille pas la boisson de mes enfants.">Je ne surveille pas la boisson de mes enfants.</label><br>
+        <label><input type="checkbox" name="peche" value="Je suis difficile pour la nourriture, et je crée des difficultés inutiles à ma famille.">Je suis difficile pour la nourriture, et je crée des difficultés inutiles à ma famille.</label><br>
+        <label><input type="checkbox" name="peche" value="Je suis trop attaché aux banquets et aux bons repas.">Je suis trop attaché aux banquets et aux bons repas.</label><br>
+        <label><input type="checkbox" name="peche" value="J’abuse des friandises.">J’abuse des friandises.</label><br>
+        <label><input type="checkbox" name="peche" value="Je fume d’une façon, immodérée.">Je fume d’une façon, immodérée.</label><br>
+
+    </fieldset><fieldset>
+        <legend>Colère</legend>
+        <label><input type="checkbox" name="peche" value="J’ai mauvais caractère, et je ne fais pas d’effort pour m’en corriger.">J’ai mauvais caractère, et je ne fais pas d’effort pour m’en corriger.</label><br>
+        <label><input type="checkbox" name="peche" value="Je m’emporte dans de violentes colères.">Je m’emporte dans de violentes colères.</label><br>
+        <label><input type="checkbox" name="peche" value="Je corrige mes enfants sans me maîtriser.">Je corrige mes enfants sans me maîtriser.</label><br>
+        <label><input type="checkbox" name="peche" value="Je suis brutal envers les animaux.">Je suis brutal envers les animaux.</label><br>
+
+    </fieldset><fieldset>
+        <legend>Paresse</legend>
+        <label><input type="checkbox" name="peche" value="Je prolonge mon sommeil, ou je paresse dans mon lit, au-delà du nécessaire.">Je prolonge mon sommeil, ou je paresse dans mon lit, au-delà du nécessaire.</label><br>
+        <label><input type="checkbox" name="peche" value="Je rechigne devant l’effort pour mon travail.">Je rechigne devant l’effort pour mon travail.</label><br>
+        <label><input type="checkbox" name="peche" value="J’ai refusé de me gêner pour rendre service aux autres gratuitement.">J’ai refusé de me gêner pour rendre service aux autres gratuitement.</label><br>
+        <label><input type="checkbox" name="peche" value="Je cherche toujours à grignoter sur le temps de mon devoir — au profit de mon plaisir.">Je cherche toujours à grignoter sur le temps de mon devoir — au profit de mon plaisir.</label><br>
+        <label><input type="checkbox" name="peche" value="Je suis paresseux pour mes prières, pour répondre à la messe.">Je suis paresseux pour mes prières, pour répondre à la messe.</label><br>
+        <label><input type="checkbox" name="peche" value="Je cherche mes aises dans mes attitudes au lieu de me discipliner et de me tenir dignement.">Je cherche mes aises dans mes attitudes au lieu de me discipliner et de me tenir dignement.</label><br>
+    </fieldset>
+
+        <h3>Autre péchés</h3>
+        <fieldset>
+            <div id="otherSins">
+                <div>
+                    <input type="checkbox" name="peche" disabled>
+                    <input type="text" placeholder="Entrez votre péché" oninput="addCheckbox(this)">
+                </div>
+            </div>
+        </fieldset>
+
+    <p/>
+
+        <button type="submit" class="center">Ma confession...</button>
+    </form>
+</div>
+
+<div id="summary" class="hidden">
+    <form onsubmit="toggleBack(event)">
+    <h1>Votre confession</h1>
+
+    <p>Au nom du Père et du Fils et du Saint-Esprit. Amen.</p>
+
+    <p>Bénissez-moi, mon Père, parce que j’ai péché.</p>
+
+    <p>Je confesse à Dieu tout-puissant, je reconnais devant vous, mon Père, que j’ai péché, en pensée, en paroles, par action et par omission.</p>
+
+    <p>Mon Père, je ne me suis pas confessé depuis... J’ai fait (ou «&nbsp;je n’ai pas fait&nbsp;») ma pénitence.</p>
+
+    <p>Mon Père, voici mes péchés&nbsp;:</p>
+    <ul id="peches-list"></ul>
+    <p>De tous ces péchés — de tous ceux que j’ai oubliés — de tous ceux de ma vie passée, je demande pardon à Dieu  — et, à vous, mon Père, pénitence et absolution, si vous m’en jugez digne.</p>
+    <p>Oui, j’ai vraiment péché. C’est pourquoi je supplie la bienheureuse Vierge Marie, les anges et tous les saints et vous aussi, mon Père, de prier pour moi le Seigneur notre Dieu.</p>
+    <p class="indent"><i>Vous écoutez ensuite ce que vous dit le confesseur&nbsp;; quand il a fini de vous parler, vous dites l’acte de contrition&nbsp;:</i></p>
+    <p>Mon Dieu, j’ai un très grand regret de vous avoir offensé, parce que vous êtes infiniment bon, et que le péché vous déplaît. Je prends la ferme résolution, avec le secours de votre sainte grâce, de ne plus vous offenser de faire pénitence.</p>
+    <p class="indent"><i>Vous écoutez la formule d’absolution, — avec joie, humilité et reconnaissance.</i></p>
+    <p>Merci, mon Père / monsieur l’abbé&nbsp;!</p>
+    <p class="indent"><i>Vous allez faire la pénitence que le confesseur vous a imposée.</i></p>
+
+    <button type="submit" class="center">Revenir à mon examen de conscience...</button>
+    <button onclick="clean()" class="center">Deo Gratias&nbsp;!</button>
+</div>
+
+<script>
+    function clean() {
+        let checkboxes = document.querySelectorAll('input[type="checkbox"]');
+        checkboxes.forEach(function(checkbox) {
+            checkbox.checked = false;
+        });
+        let textInputs = document.querySelectorAll('input[type="text"]');
+        textInputs.forEach(function(input) {
+            input.value = '';
+        });
+        toggleBack(null);
+    }
+
+    function addCheckbox(input) {
+        if (input.value.trim() !== "") {
+            input.previousElementSibling.disabled = false
+            input.previousElementSibling.checked = true;
+            input.previousElementSibling.value = input.value;
+            let allInputs = document.querySelectorAll('#otherSins input[type="text"]');
+            if (input === allInputs[allInputs.length - 1]) {
+                let newDiv = document.createElement('div');
+                newDiv.innerHTML = `<input type="checkbox" name="peche" disabled> <input type="text" placeholder="Entrez votre péché" oninput="addCheckbox(this)">`;
+                document.getElementById('otherSins').appendChild(newDiv);
+            }
+        } else {
+            input.previousElementSibling.disabled = true
+            input.previousElementSibling.checked = false;
+        }
+    }
+
+    function toggleBack(event) {
+        event.preventDefault();
+        document.getElementById('confession-form').classList.remove('hidden');
+        document.getElementById('summary').classList.add('hidden');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function generateSummary(event) {
+        event.preventDefault();
+
+        const selectedPeches = Array.from(document.querySelectorAll('input[name="peche"]:checked'));
+        const pechesList = document.getElementById('peches-list');
+        pechesList.innerHTML = '';
+
+        if (selectedPeches.length === 0) {
+            pechesList.innerHTML = '<li>Aucun péché sélectionné.</li>';
+        } else {
+            selectedPeches.forEach(peche => {
+                const li = document.createElement('li');
+                li.textContent = peche.value;
+                pechesList.appendChild(li);
+            });
+        }
+
+        document.getElementById('confession-form').classList.add('hidden');
+        document.getElementById('summary').classList.remove('hidden');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+</script>
+
+</body>
+</html>
