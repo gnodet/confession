@@ -15,7 +15,7 @@
 
         body {
             font-family: Arial, sans-serif;
-            max-width: 800px;
+            max-width: 1000px;
             margin: 0 auto;
             padding: var(--spacing);
             line-height: 1.6;
@@ -50,16 +50,21 @@
 
         .links {
             display: grid;
-            gap: var(--spacing);
-            margin: var(--spacing) 0;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 3rem;
+            margin: 3rem 0;
         }
 
         .link-card {
             background: white;
-            padding: var(--spacing);
+            padding: 1.5rem;
             border-radius: 8px;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
             transition: transform 0.2s;
+            min-height: 200px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
         }
 
         .link-card:hover {
@@ -79,6 +84,12 @@
         a:hover {
             text-decoration: underline;
         }
+
+        @media (max-width: 600px) {
+            .links {
+                grid-template-columns: 1fr;
+            }
+        }
     </style>
 </head>
 <body>
@@ -94,14 +105,24 @@
 </blockquote>
 
 <div class="links">
-    <a href="enfants-7-11-ans.html" class="link-card">
+    <a href="adultes.html" class="link-card">
+        <h2>Examen pour les adultes</h2>
+        <p>Un examen de conscience complet suivant les dix commandements et les péchés capitaux, pour une confession approfondie.</p>
+    </a>
+
+    <a href="beatitudes.html" class="link-card">
+        <h2>Examen selon les Béatitudes</h2>
+        <p>Un examen de conscience basé sur les Béatitudes, pour méditer sur notre vie chrétienne à la lumière de l'Évangile et du Sermon sur la montagne.</p>
+    </a>
+
+    <a href="enfants.html" class="link-card">
         <h2>Examen pour les enfants (7-11 ans)</h2>
         <p>Un examen de conscience adapté aux plus jeunes, avec un langage simple et des situations de leur quotidien.</p>
     </a>
 
-    <a href="adultes.html" class="link-card">
-        <h2>Examen pour les adultes</h2>
-        <p>Un examen de conscience complet suivant les dix commandements et les péchés capitaux, pour une confession approfondie.</p>
+    <a href="jeunes.html" class="link-card">
+        <h2>Examen pour les jeunes</h2>
+        <p>Un examen de conscience adapté aux adolescents, basé sur le Youcat, abordant les questions de leur âge et les défis de leur vie quotidienne.</p>
     </a>
 </div>
 </body>

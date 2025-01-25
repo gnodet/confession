@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Examen de conscience pour les jeunes (Youcat)</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Short+Stack&display=swap');
+
+        /* Styles identiques */
+        :root {
+            --text-color: #444;
+            --bg-color: #ffffff;
+            --primary-color: #4a90e2;
+            --secondary-color: #82c91e;
+            --border-color: #ddd;
+            --spacing-unit: 1rem;
+        }
+
+        body {
+            font-family: 'Short Stack', cursive, sans-serif;
+            line-height: 1.6;
+            background: #f9f9f9;
+            color: var(--text-color);
+            max-width: 800px;
+            margin: 0 auto;
+            padding: var(--spacing-unit);
+        }
+
+        h1, h2, h3 {
+            color: var(--primary-color);
+            text-align: center;
+        }
+
+        fieldset {
+            margin: 1rem 0;
+            padding: 1rem;
+            border: 2px solid var(--border-color);
+            border-radius: 15px;
+            background: white;
+        }
+
+        legend {
+            background: var(--primary-color);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 10px;
+            font-weight: bold;
+        }
+
+        label {
+            display: flex;
+            align-items: center;
+            margin: 0.5rem 0;
+            font-size: 1.1rem;
+        }
+
+        input[type="checkbox"] {
+            margin-right: 1rem;
+            width: 20px;
+            height: 20px;
+        }
+
+        .indent {
+            margin-left: 2rem;
+            padding-left: 1rem;
+            border-left: 3px solid var(--secondary-color);
+            font-style: italic;
+        }
+
+        button {
+            display: block;
+            width: 100%;
+            max-width: 300px;
+            margin: 1.5rem auto;
+            padding: 1rem;
+            background: var(--secondary-color);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            font-family: inherit;
+        }
+
+        button:hover {
+            background: var(--primary-color);
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        #summary {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .bible-quote {
+            font-style: italic;
+            color: var(--primary-color);
+            text-align: center;
+            margin: 1rem 0;
+        }
+    </style>
+</head>
+<body>
+<div id="confession-form">
+    <h1>EXAMEN DE CONSCIENCE<br>Pour les jeunes</h1>
+    <p class="subtitle">À partir des dix commandements et du Youcat</p>
+
+    <form id="confession" onsubmit="generateSummary(event)">
+        <h2>1. « Je suis le Seigneur ton Dieu, tu n'auras pas d'autres dieux que Moi. » (Yct 352-358 ; CEC 2084-2141)</h2>
+        <fieldset>
+            <label><input type="checkbox" name="peche" value="Connaître Dieu, le servir et l'adorer ne sont pas les priorités de ma vie">Connaître Dieu, le servir et l'adorer ne sont pas les priorités de ma vie</label>
+            <label><input type="checkbox" name="peche" value="Je ne place pas ma foi et mon espérance en Dieu">Je ne place pas ma foi et mon espérance en Dieu</label>
+            <label><input type="checkbox" name="peche" value="Je ne tends pas de tout mon amour vers Dieu">Je ne tends pas de tout mon amour vers Dieu</label>
+            <label><input type="checkbox" name="peche" value="Je ne prends pas conscience que l'adoration de Dieu me libère">Je ne prends pas conscience que l'adoration de Dieu me libère</label>
+            <label><input type="checkbox" name="peche" value="Je me laisse gouverner par des réalités matérielles">Je me laisse gouverner par des réalités matérielles (argent, influence, succès, beauté)</label>
+            <label><input type="checkbox" name="peche" value="Je suis superstitieux ou attiré par l'ésotérisme">Je suis superstitieux ou attiré par l'ésotérisme</label>
+            <label><input type="checkbox" name="peche" value="J'ai blasphémé ou commis des sacrilèges">J'ai blasphémé ou commis des sacrilèges</label>
+            <label><input type="checkbox" name="peche" value="Je ne prends pas de temps pour l'adoration eucharistique">Je ne prends pas de temps pour l'adoration eucharistique</label>
+            <label><input type="checkbox" name="peche" value="Je ne cherche pas à approfondir ma foi">Je ne cherche pas à approfondir ma foi</label>
+            <label><input type="checkbox" name="peche" value="Je n'aime pas l'Église comme une mère">Je n'aime pas l'Église comme une mère</label>
+            <label><input type="checkbox" name="peche" value="Je ne suis pas fidèle aux enseignements du Saint-Père">Je ne suis pas fidèle aux enseignements du Saint-Père</label>
+        </fieldset>
+
+        <h2>2. « Tu ne prononceras pas le nom du Seigneur ton Dieu à faux » (Yct 359-361 ; CEC 2142-2167)</h2>
+        <fieldset>
+            <label><input type="checkbox" name="peche" value="J'ai juré ou fait de fausses promesses au nom de Dieu">J'ai juré ou fait de fausses promesses au nom de Dieu</label>
+            <label><input type="checkbox" name="peche" value="Je ne trace pas le signe de croix comme un véritable acte de foi">Je ne trace pas le signe de croix comme un véritable acte de foi</label>
+            <label><input type="checkbox" name="peche" value="Je ne suis pas respectueux de la vie et de sa dignité">Je ne suis pas respectueux de la vie et de sa dignité</label>
+        </fieldset>
+
+        <h2>3. « Souviens-toi du jour du sabbat pour le sanctifier » (Yct 362-366 ; CEC 2166-2195)</h2>
+        <p class="subtitle">Pour les chrétiens, le sabbat est le dimanche, jour où le Christ est ressuscité des morts.</p>
+        <fieldset>
+            <label><input type="checkbox" name="peche" value="Je ne rends pas grâce pour la création">Je ne rends pas grâce pour la création</label>
+            <label><input type="checkbox" name="peche" value="Je ne vis pas en fonction de la vie éternelle">Je ne vis pas en fonction de la vie éternelle</label>
+            <label><input type="checkbox" name="peche" value="Je ne consacre pas vraiment le dimanche à Dieu">Je ne consacre pas vraiment le dimanche à Dieu</label>
+            <label><input type="checkbox" name="peche" value="Je ne participe pas à la messe">Je ne participe pas à la messe</label>
+            <label><input type="checkbox" name="peche" value="Je ne sais pas rendre grâce">Je ne sais pas rendre grâce</label>
+            <label><input type="checkbox" name="peche" value="Je ne quitte pas mes activités le dimanche">Je ne quitte pas mes activités le dimanche</label>
+            <label><input type="checkbox" name="peche" value="J'impose du travail à autrui le dimanche">J'impose du travail à autrui le dimanche</label>
+        </fieldset>
+
+        <h2>4. « Honore ton père et ta mère » (Yct 367-377 ; CEC 2197-2257)</h2>
+        <p class="subtitle">Le quatrième commandement se rapporte en premier lieu à nos parents, mais aussi à tous ceux à qui nous devons la vie, le bien-être, la sécurité et la foi.</p>
+        <fieldset>
+            <label><input type="checkbox" name="peche" value="Je n'ai pas une relation d'amour et de respect avec mes parents">Je n'ai pas une relation d'amour et de respect avec mes parents</label>
+            <label><input type="checkbox" name="peche" value="Je ne prends pas soin de mes parents">Je ne prends pas soin de mes parents</label>
+            <label><input type="checkbox" name="peche" value="Je ne suis pas un exemple solide et droit">Je ne suis pas un exemple solide et droit</label>
+            <label><input type="checkbox" name="peche" value="Je ne transmets pas la foi">Je ne transmets pas la foi</label>
+            <label><input type="checkbox" name="peche" value="Je ne contribue pas au bien commun">Je ne contribue pas au bien commun</label>
+        </fieldset>
+
+        <h2>5. « Tu ne commettras pas de meurtre » (Yct 378-399 ; CEC 2258-2330)</h2>
+        <fieldset>
+            <label><input type="checkbox" name="peche" value="Je mets ma santé en danger">Je mets ma santé en danger (alcool, drogue, tabac)</label>
+            <label><input type="checkbox" name="peche" value="Je ne respecte pas mon corps">Je ne respecte pas mon corps</label>
+            <label><input type="checkbox" name="peche" value="Je ne respecte pas la vie de sa conception à la mort naturelle">Je ne respecte pas la vie de sa conception à la mort naturelle</label>
+            <label><input type="checkbox" name="peche" value="Je ne respecte pas la dignité humaine">Je ne respecte pas la dignité humaine</label>
+            <label><input type="checkbox" name="peche" value="Je porte un regard négatif sur les personnes handicapées">Je porte un regard négatif sur les personnes handicapées</label>
+            <label><input type="checkbox" name="peche" value="Je ne maîtrise pas ma colère">Je ne maîtrise pas ma colère</label>
+        </fieldset>
+
+        <h2>6. « Tu ne commettras pas d'adultère » (Yct 400-425 ; CEC 2331-2400)</h2>
+        <fieldset>
+            <label><input type="checkbox" name="peche" value="Je ne respecte pas l'égale dignité homme-femme">Je ne respecte pas l'égale dignité homme-femme</label>
+            <label><input type="checkbox" name="peche" value="Je ne conçois pas l'Amour comme un don de soi">Je ne conçois pas l'Amour comme un don de soi</label>
+            <label><input type="checkbox" name="peche" value="Je ne comprends pas que l'amour et la fécondité sont indissociables">Je ne comprends pas que l'amour et la fécondité sont indissociables</label>
+            <label><input type="checkbox" name="peche" value="Je ne vis pas ma sexualité dans la chasteté">Je ne vis pas ma sexualité dans la chasteté</label>
+            <label><input type="checkbox" name="peche" value="Je ne suis pas fidèle dans mes relations">Je ne suis pas fidèle dans mes relations</label>
+            <label><input type="checkbox" name="peche" value="Je ne suis pas ouvert à la vie">Je ne suis pas ouvert à la vie</label>
+            <label><input type="checkbox" name="peche" value="Je ne respecte pas l'ordre voulu par Dieu dans la sexualité">Je ne respecte pas l'ordre voulu par Dieu dans la sexualité</label>
+        </fieldset>
+
+        <h2>7. « Tu ne commettras pas de vol » (Yct 426-451 ; CEC 2401-2463)</h2>
+        <p class="subtitle">Le 7ème commandement concerne le bien d'autrui mais aussi une juste administration et un juste partage et administration des biens de ce monde.</p>
+        <fieldset>
+            <label><input type="checkbox" name="peche" value="J'ai volé">J'ai volé (bien matériel, plagiat, copie, téléchargement illégal)</label>
+            <label><input type="checkbox" name="peche" value="Je ne paie pas mes impôts justement">Je ne paie pas mes impôts justement</label>
+            <label><input type="checkbox" name="peche" value="Je ne gagne pas mon argent honnêtement">Je ne gagne pas mon argent honnêtement</label>
+            <label><input type="checkbox" name="peche" value="Je ne respecte pas la création">Je ne respecte pas la création</label>
+            <label><input type="checkbox" name="peche" value="Je ne me soucie pas de la dignité humaine dans mes activités">Je ne me soucie pas de la dignité humaine dans mes activités</label>
+            <label><input type="checkbox" name="peche" value="Je ne participe pas au bien commun">Je ne participe pas au bien commun</label>
+            <label><input type="checkbox" name="peche" value="Je ne participe pas aux œuvres de charité">Je ne participe pas aux œuvres de charité</label>
+        </fieldset>
+
+        <h2>8. « Tu ne témoigneras pas faussement contre ton prochain » (Yct 452-461 ; CEC 2464-2513)</h2>
+        <fieldset>
+            <label><input type="checkbox" name="peche" value="J'ai menti">J'ai menti</label>
+            <label><input type="checkbox" name="peche" value="Je ne cherche pas la vérité">Je ne cherche pas la vérité</label>
+            <label><input type="checkbox" name="peche" value="Je ne suis pas honnête">Je ne suis pas honnête</label>
+            <label><input type="checkbox" name="peche" value="Je ne respecte pas mon prochain même dans l'erreur">Je ne respecte pas mon prochain même dans l'erreur</label>
+        </fieldset>
+
+        <h2>9. « Tu ne convoiteras pas la femme de ton prochain » (Yct 462-464 ; CEC 2514-2533)</h2>
+        <p class="subtitle">St Jean distingue trois espèces de convoitise : la convoitise de la chair, des yeux et de l'orgueil de la vie. Ces trois domaines, formes de désir humain, ne sont pas mauvais mais peuvent incliner l'homme à commettre le péché.</p>
+        <fieldset>
+            <label><input type="checkbox" name="peche" value="Je me laisse dominer par mes désirs">Je me laisse dominer par mes désirs</label>
+            <label><input type="checkbox" name="peche" value="Je ne cherche pas la pureté du cœur">Je ne cherche pas la pureté du cœur</label>
+            <label><input type="checkbox" name="peche" value="Je ne me laisse pas conduire par l'Esprit Saint">Je ne me laisse pas conduire par l'Esprit Saint</label>
+            <label><input type="checkbox" name="peche" value="Je ne suis pas fidèle à la prière">Je ne suis pas fidèle à la prière</label>
+            <label><input type="checkbox" name="peche" value="Je ne maintiens pas un vrai cœur à cœur avec Dieu">Je ne maintiens pas un vrai cœur à cœur avec Dieu</label>
+            <label><input type="checkbox" name="peche" value="Je ne reçois pas régulièrement les sacrements">Je ne reçois pas régulièrement les sacrements</label>
+            <label><input type="checkbox" name="peche" value="Je ne me fais pas aider dans mes doutes">Je ne me fais pas aider dans mes doutes</label>
+        </fieldset>
+
+        <h2>10. « Tu ne convoiteras rien de ce qui est à ton prochain » (Yct 465-468 ; CEC 2534-2557)</h2>
+        <p class="subtitle">Ce commandement complète le 9ème, il porte sur l'intention du cœur.</p>
+        <fieldset>
+            <label><input type="checkbox" name="peche" value="Je suis jaloux ou envieux">Je suis jaloux ou envieux</label>
+            <label><input type="checkbox" name="peche" value="Je ne me réjouis pas des réussites des autres">Je ne me réjouis pas des réussites des autres</label>
+            <label><input type="checkbox" name="peche" value="Je manque de confiance en la Providence">Je manque de confiance en la Providence</label>
+            <label><input type="checkbox" name="peche" value="Je ne recherche pas ce qui peut me combler">Je ne recherche pas ce qui peut me combler</label>
+            <label><input type="checkbox" name="peche" value="Je ne fais pas le vœu de pauvreté">Je ne fais pas le vœu de pauvreté</label>
+            <label><input type="checkbox" name="peche" value="Je ne cherche pas l'humilité">Je ne cherche pas l'humilité</label>
+            <label><input type="checkbox" name="peche" value="Mon plus grand désir n'est pas de voir Dieu">Mon plus grand désir n'est pas de voir Dieu</label>
+        </fieldset>
+
+        <button type="submit" class="center">Préparer ma confession...</button>
+    </form>
+</div>
+
+<div id="summary" class="hidden">
+    <h1>Ma confession</h1>
+
+    <p>Au nom du Père et du Fils et du Saint-Esprit. Amen.</p>
+
+    <p>Bénissez-moi, mon Père, parce que j’ai péché.</p>
+
+    <p>Je confesse à Dieu tout-puissant, je reconnais devant vous, mon Père, que j’ai péché, en pensée, en paroles, par action et par omission.</p>
+
+    <p>Mon Père, je ne me suis pas confessé depuis... J’ai fait (ou «&nbsp;je n’ai pas fait&nbsp;») ma pénitence.</p>
+
+    <p>Mon Père, voici mes péchés&nbsp;:</p>
+    <ul id="peches-list"></ul>
+    <p>De tous ces péchés — de tous ceux que j’ai oubliés — de tous ceux de ma vie passée, je demande pardon à Dieu  — et, à vous, mon Père, pénitence et absolution, si vous m’en jugez digne.</p>
+    <p>Oui, j’ai vraiment péché. C’est pourquoi je supplie la bienheureuse Vierge Marie, les anges et tous les saints et vous aussi, mon Père, de prier pour moi le Seigneur notre Dieu.</p>
+    <p class="indent"><i>Vous écoutez ensuite ce que vous dit le confesseur&nbsp;; quand il a fini de vous parler, vous dites l’acte de contrition&nbsp;:</i></p>
+    <p>Mon Dieu, j’ai un très grand regret de vous avoir offensé, parce que vous êtes infiniment bon, et que le péché vous déplaît. Je prends la ferme résolution, avec le secours de votre sainte grâce, de ne plus vous offenser de faire pénitence.</p>
+    <p class="indent"><i>Vous écoutez la formule d’absolution, — avec joie, humilité et reconnaissance.</i></p>
+    <p>Merci, mon Père / monsieur l’abbé&nbsp;!</p>
+    <p class="indent"><i>Vous allez faire la pénitence que le confesseur vous a imposée.</i></p>
+
+    <button onclick="toggleBack(event)" class="center">Revenir à mon examen de conscience...</button>
+    <button onclick="clean()" class="center">Deo Gratias&nbsp;!</button>
+</div>
+
+<script>
+    function clean() {
+        let checkboxes = document.querySelectorAll('input[type="checkbox"]');
+        checkboxes.forEach(function(checkbox) {
+            checkbox.checked = false;
+        });
+        toggleBack(null);
+    }
+
+    function toggleBack(event) {
+        if (event) event.preventDefault();
+        document.getElementById('confession-form').classList.remove('hidden');
+        document.getElementById('summary').classList.add('hidden');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function generateSummary(event) {
+        event.preventDefault();
+
+        const selectedPeches = Array.from(document.querySelectorAll('input[name="peche"]:checked'));
+        const pechesList = document.getElementById('peches-list');
+        pechesList.innerHTML = '';
+
+        if (selectedPeches.length === 0) {
+            pechesList.innerHTML = '<li>Je n\'ai rien coché.</li>';
+        } else {
+            selectedPeches.forEach(peche => {
+                const li = document.createElement('li');
+                li.textContent = peche.value;
+                pechesList.appendChild(li);
+            });
+        }
+
+        document.getElementById('confession-form').classList.add('hidden');
+        document.getElementById('summary').classList.remove('hidden');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+</script>
+</body>
+</html>

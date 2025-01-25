@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aide à la confession — Examen de conscience</title>
+    <style>
+        :root {
+            --text-color: #333;
+            --bg-color: #ffffff;
+            --red-color: #9e2a2f;
+            --deep-blue: #003b5c;
+            --gold-color: #ffd700;
+            --border-color: #ccc;
+            --spacing-unit: 1rem;
+            --section-spacing: 4rem;
+        }
+
+        fieldset {
+            margin: calc(var(--spacing-unit) ) 0 var(--section-spacing);
+            padding: calc(var(--spacing-unit) );
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            background: var(--bg-color);
+        }
+
+        legend {
+            background: var(--bg-color);
+            padding: calc(var(--spacing-unit) / 2) var(--spacing-unit);
+            border-radius: 4px;
+            border: 1px solid var(--border-color);
+            font-weight: bold;
+            font-size: 1.1rem;
+            width: 95%;
+            position: sticky;
+            top: 0;
+            z-index: 1;
+        }
+
+        label {
+            display: flex;
+            margin: calc(var(--spacing-unit) * 0.25) 0;
+            align-items: center;
+            border-radius: 4px;
+            line-height: 1.4;
+        }
+
+        @media (max-width: 768px) {
+            :root {
+                --spacing-unit: 0.875rem;
+                --section-spacing: 3rem;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            h3 {
+                font-size: 1.25rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            :root {
+                --spacing-unit: 0.75rem;
+                --section-spacing: 2.5rem;
+            }
+
+            legend {
+                width: 92%;
+            }
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .indent {
+            margin: var(--spacing-unit) 0 var(--spacing-unit) calc(var(--spacing-unit) * 2);
+            padding-left: var(--spacing-unit);
+            border-left: 2px solid var(--border-color);
+            font-style: italic;
+            color: var(--text-color);
+        }
+
+        #summary {
+            padding: calc(var(--spacing-unit) * 2);
+            background: var(--bg-color);
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        #peches-list {
+            margin: var(--spacing-unit) 0;
+            padding-left: calc(var(--spacing-unit) * 2);
+        }
+
+        #peches-list li {
+            margin: calc(var(--spacing-unit) / 2) 0;
+            line-height: 1.5;
+        }
+
+        .center {
+            text-align: center;
+            display: block;
+            margin: 20px auto;
+        }
+
+        .justified {
+            text-align: justify;
+            margin: 20px auto;
+        }
+
+        /* Global Styles */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background: #f7f7f7;
+            color: var(--text-color);
+            max-width: 800px;
+            margin: 0 auto;
+            padding: var(--spacing-unit);
+        }
+
+        /* Main Header */
+        h1 {
+            font-size: 2.5rem;
+            margin: calc(var(--spacing-unit) * 2) 0;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: var(--spacing-unit);
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin: var(--section-spacing) 0 calc(var(--spacing-unit) * 2);
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            margin: calc(var(--section-spacing) * 0.75) 0 var(--spacing-unit);
+        }
+
+        h1, h2, h3 {
+            font-weight: bold;
+            color: var(--red-color);
+            text-align: center;
+        }
+
+        /* Links */
+        a {
+            color: var(--deep-blue);
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: var(--gold-color);
+        }
+
+        /* Buttons */
+        button {
+            display: block;
+            width: 100%;
+            max-width: 300px;
+            margin: calc(var(--section-spacing) / 2) auto;
+            padding: calc(var(--spacing-unit) * 1.25);
+            background: var(--red-color);
+            color: white;
+            border-radius: 4px;
+            border: none;
+            cursor: pointer;
+            font-size: 1.1rem;
+            transition: background-color 0.2s;
+        }
+
+        button:hover {
+            background: var(--deep-blue);
+        }
+
+        /* Section Spacing */
+        section {
+            margin-bottom: 20px;
+        }
+
+        /* Form Inputs */
+        input[type="text"], input[type="checkbox"] {
+            margin-right: var(--spacing-unit);
+            min-width: 20px;
+            min-height: 20px;
+            flex-shrink: 0;
+        }
+        input[type="text"] {
+            width: 90%;
+        }
+    </style>
+</head>
+<body>
+
+<div id="confession-form">
+    <h1>AIDE À LA CONFESSION</h1>
+    <p class="indent"><i>
+        «&nbsp;Les Béatitudes sont au cœur de la prédication de Jésus. Elles expriment la vocation des fidèles associés à la gloire de sa Passion et de sa Résurrection.&nbsp;» (CEC 1717)
+    </i></p>
+
+    <p>J’examine ma conscience.</p>
+    <p>J’ai confiance en Dieu qui est toute miséricorde.</p>
+    <p>Je demande l’aide de la Sainte Vierge, notre Mère, du Saint dont je porte le nom et de tous les Saints, de mon Ange gardien et de tous les Anges.</p>
+
+    <h2>Examen de Conscience d’après les Béatitudes</h2>
+
+    <form id="confession" onsubmit="generateSummary(event)">
+
+        <h3>«&nbsp;Heureux les pauvres en esprit, car le Royaume des cieux est à eux.&nbsp;»</h3>
+        <fieldset>
+            <legend>La pauvreté spirituelle</legend>
+            <label><input type="checkbox" name="peche" value="Je ne suis pas simple et naturel avec les autres.">Je ne suis pas simple et naturel avec les autres.</label><br>
+            <label><input type="checkbox" name="peche" value="Je suis trop fier de ce que je suis, de ce que j’ai, de ce que je sais.">Je suis trop fier de ce que je suis, de ce que j’ai, de ce que je sais.</label><br>
+            <label><input type="checkbox" name="peche" value="Je veux toujours avoir raison et le dernier mot.">Je veux toujours avoir raison et le dernier mot.</label><br>
+            <label><input type="checkbox" name="peche" value="Je n’accepte pas les conseils et les remarques.">Je n’accepte pas les conseils et les remarques.</label><br>
+            <label><input type="checkbox" name="peche" value="Je me complais à paraître supérieur aux autres.">Je me complais à paraître supérieur aux autres.</label><br>
+            <label><input type="checkbox" name="peche" value="J’ai eu des attitudes ou des paroles méprisantes ou hautaines.">J’ai eu des attitudes ou des paroles méprisantes ou hautaines.</label><br>
+            <label><input type="checkbox" name="peche" value="J’ai méprisé des personnes.">J’ai méprisé des personnes.</label><br>
+            <label><input type="checkbox" name="peche" value="J’ai été jaloux.">J’ai été jaloux.</label><br>
+            <label><input type="checkbox" name="peche" value="J’ai accaparé ce qui est le plus beau ou le meilleur.">J’ai accaparé ce qui est le plus beau ou le meilleur.</label><br>
+            <label><input type="checkbox" name="peche" value="J’ai gaspillé de l’argent ou de la nourriture.">J’ai gaspillé de l’argent ou de la nourriture.</label><br>
+            <label><input type="checkbox" name="peche" value="Je manque de générosité.">Je manque de générosité.</label><br>
+            <label><input type="checkbox" name="peche" value="Je n’ai pas respecté les affaires des autres.">Je n’ai pas respecté les affaires des autres.</label><br>
+        </fieldset>
+
+        <h3>«&nbsp;Heureux les doux, car ils posséderont la terre.&nbsp;»</h3>
+        <fieldset>
+            <legend>La douceur chrétienne</legend>
+            <label><input type="checkbox" name="peche" value="Je ne suis pas maître de mes paroles, de mes gestes et de mes réactions.">Je ne suis pas maître de mes paroles, de mes gestes et de mes réactions.</label><br>
+            <label><input type="checkbox" name="peche" value="J’ai eu des paroles blessantes, méchantes, injustes.">J’ai eu des paroles blessantes, méchantes, injustes.</label><br>
+            <label><input type="checkbox" name="peche" value="Je me suis mis en colère.">Je me suis mis en colère.</label><br>
+            <label><input type="checkbox" name="peche" value="J’ai eu des mouvements d’impatience, de susceptibilité.">J’ai eu des mouvements d’impatience, de susceptibilité.</label><br>
+        </fieldset>
+
+        <h3>«&nbsp;Heureux les affligés, car ils seront consolés.&nbsp;»</h3>
+        <fieldset>
+            <legend>L’espérance dans l’épreuve</legend>
+            <label><input type="checkbox" name="peche" value="Je n’ai pas accueilli comme venant de Dieu une épreuve, un échec, un contretemps, une maladie.">Je n’ai pas accueilli comme venant de Dieu une épreuve, un échec, un contretemps, une maladie.</label><br>
+            <label><input type="checkbox" name="peche" value="J’ai manqué d’espérance et me suis découragé.">J’ai manqué d’espérance et me suis découragé.</label><br>
+            <label><input type="checkbox" name="peche" value="Je n’ai pas prié Dieu dans les moments de tentation ou de malheur.">Je n’ai pas prié Dieu dans les moments de tentation ou de malheur.</label><br>
+            <label><input type="checkbox" name="peche" value="Je n’ai pas pensé à offrir mes souffrances ou mes contrariétés.">Je n’ai pas pensé à offrir mes souffrances ou mes contrariétés.</label><br>
+        </fieldset>
+
+        <h3>«&nbsp;Heureux ceux qui ont faim et soif de la justice, car ils seront rassasiés.&nbsp;»</h3>
+        <fieldset>
+            <legend>Le désir de Dieu</legend>
+            <label><input type="checkbox" name="peche" value="Je n’ai pas faim et soif de Dieu et de la sainteté.">Je n’ai pas faim et soif de Dieu et de la sainteté.</label><br>
+            <label><input type="checkbox" name="peche" value="Je ne prends pas le temps de prier chaque jour.">Je ne prends pas le temps de prier chaque jour.</label><br>
+            <label><input type="checkbox" name="peche" value="J’ai manqué la messe du dimanche ou des fêtes par négligence ou paresse.">J’ai manqué la messe du dimanche ou des fêtes par négligence ou paresse.</label><br>
+            <label><input type="checkbox" name="peche" value="Je ne fais pas d’efforts pour développer, nourrir et défendre ma foi.">Je ne fais pas d’efforts pour développer, nourrir et défendre ma foi.</label><br>
+            <label><input type="checkbox" name="peche" value="Je n’évite pas ce qui est nuisible à ma foi.">Je n’évite pas ce qui est nuisible à ma foi.</label><br>
+            <label><input type="checkbox" name="peche" value="Je ne désire pas avant tout aimer Dieu.">Je ne désire pas avant tout aimer Dieu.</label><br>
+            <label><input type="checkbox" name="peche" value="Dieu n’a pas la première place dans ma vie.">Dieu n’a pas la première place dans ma vie.</label><br>
+        </fieldset>
+
+        <h3>«&nbsp;Heureux les miséricordieux car ils obtiendront miséricorde.&nbsp;»</h3>
+        <fieldset>
+            <legend>La miséricorde envers le prochain</legend>
+            <label><input type="checkbox" name="peche" value="J’ai refusé de pardonner.">J’ai refusé de pardonner.</label><br>
+            <label><input type="checkbox" name="peche" value="J’ai de la haine, de l’antipathie ou de la rancune.">J’ai de la haine, de l’antipathie ou de la rancune.</label><br>
+            <label><input type="checkbox" name="peche" value="J’ai eu le désir de me venger.">J’ai eu le désir de me venger.</label><br>
+            <label><input type="checkbox" name="peche" value="J’ai injurié quelqu’un.">J’ai injurié quelqu’un.</label><br>
+            <label><input type="checkbox" name="peche" value="Je ne me suis pas dévoué pour les autres.">Je ne me suis pas dévoué pour les autres.</label><br>
+            <label><input type="checkbox" name="peche" value="Je n’ai pas essayé de comprendre, de porter, d’aider les autres.">Je n’ai pas essayé de comprendre, de porter, d’aider les autres.</label><br>
+        </fieldset>
+
+        <h3>«&nbsp;Heureux les cœurs purs, car ils verront Dieu.&nbsp;»</h3>
+        <fieldset>
+            <legend>La pureté de cœur</legend>
+            <label><input type="checkbox" name="peche" value="Je ne suis pas franc.">Je ne suis pas franc.</label><br>
+            <label><input type="checkbox" name="peche" value="J’ai menti pour cacher quelque chose ou me faire bien voir.">J’ai menti pour cacher quelque chose ou me faire bien voir.</label><br>
+            <label><input type="checkbox" name="peche" value="Je n’ai pas respecté la réputation des autres par des médisances, calomnies ou jugements.">Je n’ai pas respecté la réputation des autres par des médisances, calomnies ou jugements.</label><br>
+            <label><input type="checkbox" name="peche" value="J’ai critiqué les autres dans leur dos.">J’ai critiqué les autres dans leur dos.</label><br>
+            <label><input type="checkbox" name="peche" value="Je n’ai pas pris soin de former ma conscience.">Je n’ai pas pris soin de former ma conscience.</label><br>
+            <label><input type="checkbox" name="peche" value="Je n’ai pas toujours agi selon ma conscience.">Je n’ai pas toujours agi selon ma conscience.</label><br>
+            <label><input type="checkbox" name="peche" value="J’ai été paresseux, perdu du temps, laissé des choses inachevées.">J’ai été paresseux, perdu du temps, laissé des choses inachevées.</label><br>
+            <label><input type="checkbox" name="peche" value="J’ai manqué de respect envers mes parents ou mes supérieurs.">J’ai manqué de respect envers mes parents ou mes supérieurs.</label><br>
+            <label><input type="checkbox" name="peche" value="Je n’ai pas obéi comme je le devais.">Je n’ai pas obéi comme je le devais.</label><br>
+            <label><input type="checkbox" name="peche" value="Je n’ai pas cherché à aider et à aimer mes parents.">Je n’ai pas cherché à aider et à aimer mes parents.</label><br>
+            <label><input type="checkbox" name="peche" value="Mon comportement en famille ou en groupe a été marqué par la grossièreté ou l’égoïsme.">Mon comportement en famille ou en groupe a été marqué par la grossièreté ou l’égoïsme.</label><br>
+            <label><input type="checkbox" name="peche" value="Je ne cherche pas à rendre service.">Je ne cherche pas à rendre service.</label><br>
+            <label><input type="checkbox" name="peche" value="J’ai entretenu des pensées impures.">J’ai entretenu des pensées impures.</label><br>
+            <label><input type="checkbox" name="peche" value="J’ai péché contre la pureté en paroles, par des lectures, films ou tenues incorrectes.">J’ai péché contre la pureté en paroles, par des lectures, films ou tenues incorrectes.</label><br>
+        </fieldset>
+
+        <h3>«&nbsp;Heureux les artisans de paix car ils seront appelés fils de Dieu.&nbsp;»</h3>
+        <fieldset>
+            <legend>La construction de la paix</legend>
+            <label><input type="checkbox" name="peche" value="J’ai été cause de scandale.">J’ai été cause de scandale.</label><br>
+            <label><input type="checkbox" name="peche" value="J’ai souhaité la mort de quelqu’un.">J’ai souhaité la mort de quelqu’un.</label><br>
+            <label><input type="checkbox" name="peche" value="Je n’ai pas désiré le bien des autres et j’ai volé.">Je n’ai pas désiré le bien des autres et j’ai volé.</label><br>
+            <label><input type="checkbox" name="peche" value="J’ai triché.">J’ai triché.</label><br>
+            <label><input type="checkbox" name="peche" value="J’ai donné de mauvais conseils ou de mauvais exemples.">J’ai donné de mauvais conseils ou de mauvais exemples.</label><br>
+            <label><input type="checkbox" name="peche" value="Je n’ai pas cherché à rendre les autres heureux.">Je n’ai pas cherché à rendre les autres heureux.</label><br>
+            <label><input type="checkbox" name="peche" value="Je n’ai pas aidé ceux qui sont dans la peine.">Je n’ai pas aidé ceux qui sont dans la peine.</label><br>
+            <label><input type="checkbox" name="peche" value="Je n’ai pas contribué à la bonne entente et à la paix.">Je n’ai pas contribué à la bonne entente et à la paix.</label><br>
+            <label><input type="checkbox" name="peche" value="J’ai cherché à diviser plutôt qu’à unir.">J’ai cherché à diviser plutôt qu’à unir.</label><br>
+        </fieldset>
+
+        <h3>«&nbsp;Heureux êtes-vous si l’on vous insulte, si l’on vous persécute et si l’on vous calomnie de toutes manières à cause de moi. Soyez dans la joie et l’allégresse car votre récompense sera grande dans les cieux.&nbsp;»</h3>
+        <fieldset>
+            <legend>Le témoignage de la foi</legend>
+            <label><input type="checkbox" name="peche" value="J’ai eu peur ou honte de me montrer chrétien dans mon milieu de vie.">J’ai eu peur ou honte de me montrer chrétien dans mon milieu de vie.</label><br>
+            <label><input type="checkbox" name="peche" value="Je suis tiède dans ma foi.">Je suis tiède dans ma foi.</label><br>
+            <label><input type="checkbox" name="peche" value="Pour éviter les railleries, j’ai dit du mal de Dieu, de l’Église, de la religion ou des prêtres.">Pour éviter les railleries, j’ai dit du mal de Dieu, de l’Église, de la religion ou des prêtres.</label><br>
+            <label><input type="checkbox" name="peche" value="Je ne mets pas en pratique les paroles de l’Évangile et les enseignements religieux.">Je ne mets pas en pratique les paroles de l’Évangile et les enseignements religieux.</label><br>
+        </fieldset>
+
+        <h3>Autres péchés</h3>
+        <fieldset>
+            <div id="otherSins">
+                <div>
+                    <input type="checkbox" name="peche" disabled>
+                    <input type="text" placeholder="Entrez votre péché" oninput="addCheckbox(this)">
+                </div>
+            </div>
+        </fieldset>
+
+        <button type="submit" class="center">Ma confession...</button>
+    </form>
+</div>
+
+<div id="summary" class="hidden">
+    <h1>Votre confession</h1>
+
+    <p>Au nom du Père et du Fils et du Saint-Esprit. Amen.</p>
+
+    <p>Bénissez-moi, mon Père, parce que j’ai péché.</p>
+
+    <p>Je confesse à Dieu tout-puissant, je reconnais devant vous, mon Père, que j’ai péché, en pensée, en paroles, par action et par omission.</p>
+
+    <p>Mon Père, je ne me suis pas confessé depuis... J’ai fait (ou «&nbsp;je n’ai pas fait&nbsp;») ma pénitence.</p>
+
+    <p>Mon Père, voici mes péchés&nbsp;:</p>
+    <ul id="peches-list"></ul>
+    <p>De tous ces péchés — de tous ceux que j’ai oubliés — de tous ceux de ma vie passée, je demande pardon à Dieu  — et, à vous, mon Père, pénitence et absolution, si vous m’en jugez digne.</p>
+    <p>Oui, j’ai vraiment péché. C’est pourquoi je supplie la bienheureuse Vierge Marie, les anges et tous les saints et vous aussi, mon Père, de prier pour moi le Seigneur notre Dieu.</p>
+    <p class="indent"><i>Vous écoutez ensuite ce que vous dit le confesseur&nbsp;; quand il a fini de vous parler, vous dites l’acte de contrition&nbsp;:</i></p>
+    <p>Mon Dieu, j’ai un très grand regret de vous avoir offensé, parce que vous êtes infiniment bon, et que le péché vous déplaît. Je prends la ferme résolution, avec le secours de votre sainte grâce, de ne plus vous offenser de faire pénitence.</p>
+    <p class="indent"><i>Vous écoutez la formule d’absolution, — avec joie, humilité et reconnaissance.</i></p>
+    <p>Merci, mon Père / monsieur l’abbé&nbsp;!</p>
+    <p class="indent"><i>Vous allez faire la pénitence que le confesseur vous a imposée.</i></p>
+
+    <button onclick="toggleBack(event)" class="center">Revenir à mon examen de conscience...</button>
+    <button onclick="clean()" class="center">Deo Gratias&nbsp;!</button>
+</div>
+
+<script>
+    function clean() {
+        let checkboxes = document.querySelectorAll('input[type="checkbox"]');
+        checkboxes.forEach(function(checkbox) {
+            checkbox.checked = false;
+        });
+        let textInputs = document.querySelectorAll('input[type="text"]');
+        textInputs.forEach(function(input) {
+            input.value = '';
+        });
+        toggleBack(null);
+    }
+
+    function addCheckbox(input) {
+        if (input.value.trim() !== "") {
+            input.previousElementSibling.disabled = false
+            input.previousElementSibling.checked = true;
+            input.previousElementSibling.value = input.value;
+            let allInputs = document.querySelectorAll('#otherSins input[type="text"]');
+            if (input === allInputs[allInputs.length - 1]) {
+                let newDiv = document.createElement('div');
+                newDiv.innerHTML = `<input type="checkbox" name="peche" disabled> <input type="text" placeholder="Entrez votre péché" oninput="addCheckbox(this)">`;
+                document.getElementById('otherSins').appendChild(newDiv);
+            }
+        } else {
+            input.previousElementSibling.disabled = true
+            input.previousElementSibling.checked = false;
+        }
+    }
+
+    function toggleBack(event) {
+        event.preventDefault();
+        document.getElementById('confession-form').classList.remove('hidden');
+        document.getElementById('summary').classList.add('hidden');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function generateSummary(event) {
+        event.preventDefault();
+
+        const selectedPeches = Array.from(document.querySelectorAll('input[name="peche"]:checked'));
+        const pechesList = document.getElementById('peches-list');
+        pechesList.innerHTML = '';
+
+        if (selectedPeches.length === 0) {
+            pechesList.innerHTML = '<li>Aucun péché sélectionné.</li>';
+        } else {
+            selectedPeches.forEach(peche => {
+                const li = document.createElement('li');
+                li.textContent = peche.value;
+                pechesList.appendChild(li);
+            });
+        }
+
+        document.getElementById('confession-form').classList.add('hidden');
+        document.getElementById('summary').classList.remove('hidden');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+</script>
+
+</body>
+</html>
