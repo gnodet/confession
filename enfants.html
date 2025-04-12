@@ -87,6 +87,17 @@
             background: var(--primary-color);
         }
 
+        .button-group {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin: calc(var(--section-spacing) / 2) auto;
+        }
+
+        .button-group button {
+            margin: 0;  /* Annule la marge par défaut des boutons */
+        }
+
         .hidden {
             display: none;
         }
@@ -223,7 +234,10 @@
             <label><input type="checkbox" name="peche" value="J’ai volé ou gardé quelque chose qui ne m’appartenait pas">J’ai volé ou gardé quelque chose qui ne m’appartenait pas</label>
         </fieldset>
 
-        <button type="submit" class="center">Préparer ma confession...</button>
+        <div class="button-group">
+            <button type="button" onclick="resetForm()">Reprendre à zéro...</button>
+            <button type="submit">Ma confession...</button>
+        </div>
     </form>
 </div>
 
@@ -247,47 +261,13 @@
 
     <p>"Mon Dieu, j’ai un très grand regret de vous avoir offensé parce que vous êtes infiniment bon. Je prends la résolution, avec le secours de votre sainte grâce, de ne plus recommencer."</p>
 
-    <button onclick="toggleBack(event)">Revenir à l’examen de conscience</button>
-    <button onclick="clean()">J’ai fini !</button>
+    <div class="button-group">
+        <button onclick="toggleBack(event)">Revenir à mon examen de conscience...</button>
+        <button onclick="clean()">Deo Gratias&nbsp;!</button>
+    </div>
 </div>
 
-<script>
-    function clean() {
-        let checkboxes = document.querySelectorAll('input[type="checkbox"]');
-        checkboxes.forEach(function(checkbox) {
-            checkbox.checked = false;
-        });
-        toggleBack(null);
-    }
+<script src="js/confession.js"></script>
 
-    function toggleBack(event) {
-        if (event) event.preventDefault();
-        document.getElementById('confession-form').classList.remove('hidden');
-        document.getElementById('summary').classList.add('hidden');
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-
-    function generateSummary(event) {
-        event.preventDefault();
-
-        const selectedPeches = Array.from(document.querySelectorAll('input[name="peche"]:checked'));
-        const pechesList = document.getElementById('peches-list');
-        pechesList.innerHTML = '';
-
-        if (selectedPeches.length === 0) {
-            pechesList.innerHTML = '<li>Je n\'ai rien coché.</li>';
-        } else {
-            selectedPeches.forEach(peche => {
-                const li = document.createElement('li');
-                li.textContent = peche.value;
-                pechesList.appendChild(li);
-            });
-        }
-
-        document.getElementById('confession-form').classList.add('hidden');
-        document.getElementById('summary').classList.remove('hidden');
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-</script>
 </body>
 </html>

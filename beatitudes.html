@@ -180,6 +180,17 @@
             background: var(--deep-blue);
         }
 
+        .button-group {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin: calc(var(--section-spacing) / 2) auto;
+        }
+
+        .button-group button {
+            margin: 0;  /* Annule la marge par défaut des boutons */
+        }
+
         /* Section Spacing */
         section {
             margin-bottom: 20px;
@@ -323,7 +334,10 @@
             </div>
         </fieldset>
 
-        <button type="submit" class="center">Ma confession...</button>
+        <div class="button-group">
+            <button type="button" onclick="resetForm()">Reprendre à zéro...</button>
+            <button type="submit">Ma confession...</button>
+        </div>
     </form>
 </div>
 
@@ -348,69 +362,13 @@
     <p>Merci, mon Père / monsieur l’abbé&nbsp;!</p>
     <p class="indent"><i>Vous allez faire la pénitence que le confesseur vous a imposée.</i></p>
 
-    <button onclick="toggleBack(event)" class="center">Revenir à mon examen de conscience...</button>
-    <button onclick="clean()" class="center">Deo Gratias&nbsp;!</button>
+    <div class="button-group">
+        <button onclick="toggleBack(event)">Revenir à mon examen de conscience...</button>
+        <button onclick="clean()">Deo Gratias&nbsp;!</button>
+    </div>
 </div>
 
-<script>
-    function clean() {
-        let checkboxes = document.querySelectorAll('input[type="checkbox"]');
-        checkboxes.forEach(function(checkbox) {
-            checkbox.checked = false;
-        });
-        let textInputs = document.querySelectorAll('input[type="text"]');
-        textInputs.forEach(function(input) {
-            input.value = '';
-        });
-        toggleBack(null);
-    }
-
-    function addCheckbox(input) {
-        if (input.value.trim() !== "") {
-            input.previousElementSibling.disabled = false
-            input.previousElementSibling.checked = true;
-            input.previousElementSibling.value = input.value;
-            let allInputs = document.querySelectorAll('#otherSins input[type="text"]');
-            if (input === allInputs[allInputs.length - 1]) {
-                let newDiv = document.createElement('div');
-                newDiv.innerHTML = `<input type="checkbox" name="peche" disabled> <input type="text" placeholder="Entrez votre péché" oninput="addCheckbox(this)">`;
-                document.getElementById('otherSins').appendChild(newDiv);
-            }
-        } else {
-            input.previousElementSibling.disabled = true
-            input.previousElementSibling.checked = false;
-        }
-    }
-
-    function toggleBack(event) {
-        event.preventDefault();
-        document.getElementById('confession-form').classList.remove('hidden');
-        document.getElementById('summary').classList.add('hidden');
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-
-    function generateSummary(event) {
-        event.preventDefault();
-
-        const selectedPeches = Array.from(document.querySelectorAll('input[name="peche"]:checked'));
-        const pechesList = document.getElementById('peches-list');
-        pechesList.innerHTML = '';
-
-        if (selectedPeches.length === 0) {
-            pechesList.innerHTML = '<li>Aucun péché sélectionné.</li>';
-        } else {
-            selectedPeches.forEach(peche => {
-                const li = document.createElement('li');
-                li.textContent = peche.value;
-                pechesList.appendChild(li);
-            });
-        }
-
-        document.getElementById('confession-form').classList.add('hidden');
-        document.getElementById('summary').classList.remove('hidden');
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-</script>
+<script src="js/confession.js"></script>
 
 </body>
 </html>
